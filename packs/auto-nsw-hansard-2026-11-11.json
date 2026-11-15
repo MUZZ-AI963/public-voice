@@ -15,8 +15,8 @@
   ],
   "claims": [
     {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Visitors",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171381",
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 2026-11-11 \u00b7 Topics on the public TOC: Visitors; Tribute to Jan Clifford; Electricity Supply Amendment (Renewable Fuel Scheme) Bill 2026; E-bike Regulation; School Student Screen Use; Plastic Reduction Legislation; School Infrastructure; Plastic Reduction Legislation; State Economy; Payroll Tax; Train Services; Liverpool City Council; NSW Health; Community Preschools; Portable Long Service Leave",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-11",
       "at": "2026-11-11",
       "kind": "hansard",
       "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
@@ -24,83 +24,11 @@
       "screenshot_hash": null
     },
     {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Tribute to Jan Clifford",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171382",
+      "text": "NSW Hansard \u00b7 Legislative Council \u00b7 2026-11-11 \u00b7 Topics on the public TOC: Conduct of Business; Conduct of Business; Conduct of Business; Whitlam Oration; Queanbeyan Show; New South Wales Society of Labor Lawyers Annual Dinner; St James and Museum Railway Stations; State Library of New South Wales Bicentenary; University of New England Graduation Ceremony; Shir: the Australian Jewish Music Festival Concert; International Day of Democracy; Aimers Foundation; Red Wednesday; National Survivors' Day",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-11",
       "at": "2026-11-11",
       "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
-      "counter_at": "2026-11-11",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Electricity Supply Amendment (Renewable Fuel Scheme) Bill 2026",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171383",
-      "at": "2026-11-11",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
-      "counter_at": "2026-11-11",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 E-bike Regulation",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171384",
-      "at": "2026-11-11",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
-      "counter_at": "2026-11-11",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 School Student Screen Use",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171388",
-      "at": "2026-11-11",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
-      "counter_at": "2026-11-11",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Plastic Reduction Legislation",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171389",
-      "at": "2026-11-11",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
-      "counter_at": "2026-11-11",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 School Infrastructure",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171390",
-      "at": "2026-11-11",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
-      "counter_at": "2026-11-11",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Plastic Reduction Legislation",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171391",
-      "at": "2026-11-11",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
-      "counter_at": "2026-11-11",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 State Economy",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171392",
-      "at": "2026-11-11",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
-      "counter_at": "2026-11-11",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Payroll Tax",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171393",
-      "at": "2026-11-11",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1820781676-106455",
       "counter_at": "2026-11-11",
       "screenshot_hash": null
     }
@@ -129,7 +57,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-15T16:42:43Z",
+    "at": "2026-11-15T23:22:23Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -137,7 +65,7 @@
     "entry_hash": null,
     "reason": "Lawful auto-harvest of public parliamentary record"
   },
-  "content_hash": "121ed806855e4d55681250d7c77c57577c79613ea9febee0583f8828667cf0ab",
+  "content_hash": "9d1bfa21d76cf7cd41cf2da6c670ce1945c0e01ba1efc0b985d95236351dae3c",
   "moderation": {
     "auto_checks": [
       {

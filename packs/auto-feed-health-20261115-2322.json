@@ -1,7 +1,7 @@
 {
   "schema": "public-voice-pack/v1",
   "product": "MUZZ Public Voice",
-  "id": "auto-feed-health-20261115-0741",
+  "id": "auto-feed-health-20261115-2322",
   "demo": false,
   "title": "Lawful feed health \u00b7 2026-11-15",
   "country": "OTHER",
@@ -15,8 +15,8 @@
   ],
   "claims": [
     {
-      "text": "Feed nsw-hansard (NSW Parliament Hansard API): down",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard",
+      "text": "Feed nsw-hansard (NSW Parliament Hansard API): up",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12",
       "at": "2026-11-15",
       "kind": "other",
       "counter_url": null,
@@ -34,7 +34,7 @@
     },
     {
       "text": "Feed uk-historic-hansard (Historic Hansard JSON): up",
-      "url": "https://api.parliament.uk/historic-hansard/",
+      "url": "https://api.parliament.uk/historic-hansard/api",
       "at": "2026-11-15",
       "kind": "other",
       "counter_url": null,
@@ -43,7 +43,7 @@
     },
     {
       "text": "Feed twfy (TheyWorkForYou API): up",
-      "url": "https://www.theyworkforyou.com/api/",
+      "url": "https://www.theyworkforyou.com/api/docs/",
       "at": "2026-11-15",
       "kind": "other",
       "counter_url": null,
@@ -70,7 +70,7 @@
     },
     {
       "text": "Feed au-oaic-foi (OAIC FOI rights): down",
-      "url": "https://www.oaic.gov.au/freedom-of-information/your-foi-rights/make-an-foi-request",
+      "url": "https://www.oaic.gov.au/",
       "at": "2026-11-15",
       "kind": "other",
       "counter_url": null,
@@ -79,7 +79,7 @@
     },
     {
       "text": "Feed au-ombudsman (Commonwealth Ombudsman complaints): down",
-      "url": "https://www.ombudsman.gov.au/complaints",
+      "url": "https://www.ombudsman.gov.au/",
       "at": "2026-11-15",
       "kind": "other",
       "counter_url": null,
@@ -127,7 +127,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-15T07:41:37Z",
+    "at": "2026-11-15T23:22:23Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -135,7 +135,7 @@
     "entry_hash": null,
     "reason": "Lawful feed health sweep"
   },
-  "content_hash": "cdced17241ca94fb38133845174a50e88c9426f819b638e8ce4a85e007521fc2",
+  "content_hash": "09619f35d0c63691d43a200c5dba6db2d88fd060677055e9002f5f8fb7774d9c",
   "moderation": {
     "auto_checks": [
       {

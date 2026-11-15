@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-15T16:42:43Z",
+  "at": "2026-11-15T23:22:23Z",
   "lawful": true,
   "lodged": false,
   "contacted": false,
-  "nsw_items": 72,
-  "fallback_europarl": false,
+  "nsw_items": 6,
+  "fallback_europarl": true,
   "health": [
     {
       "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12",
@@ -124,32 +124,40 @@
     {
       "date": "2026-11-12",
       "ok": true,
-      "items": 24,
+      "items": 2,
       "error": null,
       "source": "nsw-hansard"
     },
     {
       "date": "2026-11-11",
       "ok": true,
-      "items": 24,
+      "items": 2,
       "error": null,
       "source": "nsw-hansard"
     },
     {
       "date": "2026-11-10",
       "ok": true,
-      "items": 24,
+      "items": 2,
       "error": null,
       "source": "nsw-hansard"
+    },
+    {
+      "date": "2026-11-15",
+      "ok": true,
+      "items": 12,
+      "error": null,
+      "source": "europarl"
     }
   ],
   "published": [
-    "auto-feed-health-20261115-1642",
+    "auto-feed-health-20261115-2322",
     "auto-nsw-hansard-2026-11-12",
     "auto-nsw-hansard-2026-11-11",
-    "auto-nsw-hansard-2026-11-10"
+    "auto-nsw-hansard-2026-11-10",
+    "auto-europarl-2026-11-15"
   ],
-  "index_count": 8,
+  "index_count": 7,
   "right_places": [
     "packs/*.json on GitHub Pages ledger",
     "packs/index.json gallery index",

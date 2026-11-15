@@ -4,28 +4,18 @@
   "notice": "Static ledger index. Auto packs from lawful public-source sweep. DEMO packs are fictional. This index does not lodge anything.",
   "packs": [
     {
-      "id": "auto-feed-health-20261115-0728",
-      "file": "auto-feed-health-20261115-0728.json",
+      "id": "auto-europarl-2026-11-15",
+      "file": "auto-europarl-2026-11-15.json",
       "demo": false,
-      "title": "Lawful feed health \u00b7 2026-11-15",
-      "country": "OTHER",
-      "door": "other",
-      "auth_status": "awaiting_sources",
+      "title": "European Parliament public activity \u00b7 2026-11-15",
+      "country": "EU",
+      "door": "elected",
+      "auth_status": "matches_source",
       "silence_days": null
     },
     {
-      "id": "auto-feed-health-20261115-0741",
-      "file": "auto-feed-health-20261115-0741.json",
-      "demo": false,
-      "title": "Lawful feed health \u00b7 2026-11-15",
-      "country": "OTHER",
-      "door": "other",
-      "auth_status": "awaiting_sources",
-      "silence_days": null
-    },
-    {
-      "id": "auto-feed-health-20261115-1642",
-      "file": "auto-feed-health-20261115-1642.json",
+      "id": "auto-feed-health-20261115-2322",
+      "file": "auto-feed-health-20261115-2322.json",
       "demo": false,
       "title": "Lawful feed health \u00b7 2026-11-15",
       "country": "OTHER",

@@ -15,8 +15,8 @@
   ],
   "claims": [
     {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Address",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171615",
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 2026-11-12 \u00b7 Topics on the public TOC: Address; Standard Time Amendment (Reduction of Daylight Saving) Bill 2026 (No 2); Environmental Planning and Assessment  Amendment (Sydney Drinking Water Catchment Neutral or Beneficial Effect) Bill 2026; Energy and Other Legislation Amendment (Renewable Energy Infrastructure) Bill 2026 (No. 2); Visitors; Community Preschools; State Economy; Community Preschools; State Economy; Parkes Energy Recovery Facility; Western Sy",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12",
       "at": "2026-11-12",
       "kind": "hansard",
       "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
@@ -24,83 +24,11 @@
       "screenshot_hash": null
     },
     {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Standard Time Amendment (Reduction of Daylight Saving) Bill 2026 (No 2)",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171616",
+      "text": "NSW Hansard \u00b7 Legislative Council \u00b7 2026-11-12 \u00b7 Topics on the public TOC: Catalpa Rescue 150th Anniversary; Former Senior Trade and Investment Commissioner Michael Newman; Remembrance Day; Oxi Day; Umiya Parivar Diwali and Annakut Celebrations; Italian Chamber of Commerce and Industry in Australia Event; Ex Gratia Payments; Oikophobia in Australia; Bourke Childcare Services; Parliamentary Friends of Kurdish People Event; Whitlam Oration; Central West Women's Health Centre Fortieth Anniversary; ",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12",
       "at": "2026-11-12",
       "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
-      "counter_at": "2026-11-12",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Environmental Planning and Assessment  Amendment (Sydney Drinking Water Catchment Neutral or Beneficial Effect) Bill 2026",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171620",
-      "at": "2026-11-12",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
-      "counter_at": "2026-11-12",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Energy and Other Legislation Amendment (Renewable Energy Infrastructure) Bill 2026 (No. 2)",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171621",
-      "at": "2026-11-12",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
-      "counter_at": "2026-11-12",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Visitors",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171622",
-      "at": "2026-11-12",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
-      "counter_at": "2026-11-12",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Community Preschools",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171623",
-      "at": "2026-11-12",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
-      "counter_at": "2026-11-12",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 State Economy",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171624",
-      "at": "2026-11-12",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
-      "counter_at": "2026-11-12",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Community Preschools",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171625",
-      "at": "2026-11-12",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
-      "counter_at": "2026-11-12",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 State Economy",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171626",
-      "at": "2026-11-12",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
-      "counter_at": "2026-11-12",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Parkes Energy Recovery Facility",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171627",
-      "at": "2026-11-12",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171859",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1820781676-106533",
       "counter_at": "2026-11-12",
       "screenshot_hash": null
     }
@@ -129,7 +57,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-15T16:42:43Z",
+    "at": "2026-11-15T23:22:23Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -137,7 +65,7 @@
     "entry_hash": null,
     "reason": "Lawful auto-harvest of public parliamentary record"
   },
-  "content_hash": "42439d058014b85c9ed3f556919de12cc4aa5bf9a7003f151d893a5d9438f623",
+  "content_hash": "9b841cef4f7615d325bcbf8f4f7d385706ead96a3092214f80842b381abf0e38",
   "moderation": {
     "auto_checks": [
       {

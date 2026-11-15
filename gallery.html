@@ -83,6 +83,11 @@
     </div>
   </header>
   <div class="banner">Open on any laptop. People sound out public lines that don’t stack. AI assists — only primary sources publish.</div>
+  <div class="warn" style="margin-top:12px;border:1px solid var(--warn-line);background:var(--warn);padding:12px 14px;border-radius:8px">
+    <strong>If a source link shows Cloudflare 502</strong>
+    That is the <em>other</em> host (often NSW Parliament API) failing — not Public Voice.
+    The topic and quote stay on this card. Retry the link later, try without VPN, or use the Security pack. Sweep no longer deep-links NSW <code>/fragment/</code> IDs for that reason.
+  </div>
 
   <div class="filters">
     <label>Country<select id="fCountry"><option value="">All</option></select></label>
@@ -183,6 +188,18 @@ function filtered() {
   });
 }
 
+function sourceLabel(url) {
+  try {
+    const h = new URL(url).hostname;
+    if (h.indexOf("parliament.nsw.gov.au") !== -1) {
+      return "NSW Parliament API (may Cloudflare-502 when their host flaps)";
+    }
+    return "Primary source";
+  } catch (e) {
+    return "Primary source";
+  }
+}
+
 async function render() {
   const list = document.getElementById("list");
   const rows = filtered();
@@ -195,9 +212,15 @@ async function render() {
       list.innerHTML += `<article class="card"><p class="meta">Could not load ${esc(meta.id)}</p></article>`;
       continue;
     }
-    const claim = (pack.claims && pack.claims[0]) || {};
+    const claims = pack.claims || [];
+    const claim = claims[0] || {};
     const silence = (pack.silence && pack.silence[0]) || null;
     const auth = pack.auth || {};
+    const claimBoxes = (claims.length ? claims : [claim]).slice(0, 6).map((c) =>
+      `<div class="box" style="margin-bottom:8px"><strong>On the record</strong>${esc(c.text || "")}<br>
+       <a href="${esc(c.url || "#")}" target="_blank" rel="noopener noreferrer">${esc(sourceLabel(c.url))}</a> · ${esc(c.at || "")}
+       ${c.counter_url ? `<br><a href="${esc(c.counter_url)}" target="_blank" rel="noopener noreferrer">Related / PDF</a>` : ""}</div>`
+    ).join("");
     const art = document.createElement("article");
     art.className = "card";
     art.innerHTML = `
@@ -217,10 +240,7 @@ async function render() {
         <button type="button" class="pill" data-open="${esc(pack.id)}">Open authentication</button>
       </div>
       <div class="detail" id="d-${esc(pack.id)}">
-        <div class="side">
-          <div class="box"><strong>Public statement</strong>${esc(claim.text || "")}<br><a href="${esc(claim.url || "#")}" target="_blank" rel="noopener noreferrer">Primary source</a> · ${esc(claim.at || "")}</div>
-          <div class="box"><strong>Later fact / check</strong>${claim.counter_url ? `<a href="${esc(claim.counter_url)}" target="_blank" rel="noopener noreferrer">Counter source</a> · ${esc(claim.counter_at || "")}` : "No counter URL"}</div>
-        </div>
+        ${claimBoxes || `<div class="box"><strong>Public statement</strong>${esc(claim.text || "")}</div>`}
         ${silence ? `<p class="meta" style="margin-top:10px">Silence clock: ${esc(silence.clock_start)} → due ${esc(silence.due || "—")} · ${esc(silence.status)} · ${esc(silence.clock_basis || "")}</p>` : ""}
         <p class="meta" style="margin-top:10px"><strong>Explain ask:</strong> ${esc(auth.explain_ask || "")}</p>
         <p class="meta"><strong>People's cost:</strong> ${esc((pack.harm && pack.harm.summary) || "")}</p>

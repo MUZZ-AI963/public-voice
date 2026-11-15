@@ -15,8 +15,8 @@
   ],
   "claims": [
     {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Member for Campbelltown",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171127",
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 2026-11-10 \u00b7 Topics on the public TOC: Member for Campbelltown; Visitors; Contract Cleaning Industry (Portable Long Service Leave Scheme) Amendment Bill 2026; Coroners Amendment (Senior Next of Kin) Bill 2026; Crimes (Domestic and Personal Violence) and Other Legislation Amendment Bill 2026; Crimes Amendment (Breaking and Entering Offences) Bill 2026; Electricity Infrastructure Investment Amendment Bill 2026; Environmental Legislation Amendment (Plastic Reduc",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-10",
       "at": "2026-11-10",
       "kind": "hansard",
       "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
@@ -24,83 +24,11 @@
       "screenshot_hash": null
     },
     {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Visitors",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171128",
+      "text": "NSW Hansard \u00b7 Legislative Council \u00b7 2026-11-10 \u00b7 Topics on the public TOC: Amended Standing Rules and Orders; Contract Cleaning Industry (Portable Long Service Leave Scheme) Amendment Bill 2026; Coroners Amendment (Senior Next of Kin) Bill 2026; Crimes (Domestic and Personal Violence) and Other Legislation Amendment Bill 2026; Crimes Amendment (Breaking and Entering Offences) Bill 2026; Electricity Infrastructure Investment Amendment Bill 2026; Environmental Legislation Amendment (Plastic Reduct",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-10",
       "at": "2026-11-10",
       "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
-      "counter_at": "2026-11-10",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Contract Cleaning Industry (Portable Long Service Leave Scheme) Amendment Bill 2026",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171129",
-      "at": "2026-11-10",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
-      "counter_at": "2026-11-10",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Coroners Amendment (Senior Next of Kin) Bill 2026",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171129",
-      "at": "2026-11-10",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
-      "counter_at": "2026-11-10",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Crimes (Domestic and Personal Violence) and Other Legislation Amendment Bill 2026",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171129",
-      "at": "2026-11-10",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
-      "counter_at": "2026-11-10",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Crimes Amendment (Breaking and Entering Offences) Bill 2026",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171129",
-      "at": "2026-11-10",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
-      "counter_at": "2026-11-10",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Electricity Infrastructure Investment Amendment Bill 2026",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171129",
-      "at": "2026-11-10",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
-      "counter_at": "2026-11-10",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Environmental Legislation Amendment (Plastic Reduction and Container Recycling) Bill 2026",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171129",
-      "at": "2026-11-10",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
-      "counter_at": "2026-11-10",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Future Jobs and Investment Bill 2025",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171129",
-      "at": "2026-11-10",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
-      "counter_at": "2026-11-10",
-      "screenshot_hash": null
-    },
-    {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Justice Legislation Amendment (Miscellaneous) Bill 2026",
-      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171129",
-      "at": "2026-11-10",
-      "kind": "hansard",
-      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171379",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1820781676-106352",
       "counter_at": "2026-11-10",
       "screenshot_hash": null
     }
@@ -129,7 +57,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-15T16:42:43Z",
+    "at": "2026-11-15T23:22:23Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -137,7 +65,7 @@
     "entry_hash": null,
     "reason": "Lawful auto-harvest of public parliamentary record"
   },
-  "content_hash": "1c24cc3c1f5694c2e88780d87f8b74935ce96d940526220935cb063f64b9b830",
+  "content_hash": "fd644c0075ab774e8135eec121cefeb4cf178d8a83b520eec9bdcb89f9ac658b",
   "moderation": {
     "auto_checks": [
       {

@@ -129,32 +129,37 @@ def harvest_nsw_hansard(dates: list[str]) -> list[dict]:
             continue
         items = []
         for house in rows:
-            toc_id = house.get("TableOfContentsDocId") or house.get("PdfDocumentId")
             pdf_id = house.get("PdfDocumentId")
             house_name = house.get("HouseName") or house.get("HouseCode") or "House"
             details = house.get("Details") or []
-            for detail in details[:12]:
+            topics = []
+            for detail in details[:20]:
                 text = (detail.get("Text") or "").strip()
-                doc_id = detail.get("DocumentId") or toc_id
-                if not text or not doc_id:
+                if not text or looks_private(text):
                     continue
-                if looks_private(text):
-                    continue
-                frag = f"https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/{doc_id}"
-                items.append(
-                    {
-                        "text": f"NSW Hansard · {house_name} · {text}",
-                        "url": frag,
-                        "at": day,
-                        "kind": "hansard",
-                        "house": house_name,
-                        "pdf": (
-                            f"https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/{pdf_id}"
-                            if pdf_id
-                            else None
-                        ),
-                    }
-                )
+                topics.append(text)
+            if not topics:
+                continue
+            # One day/house claim — do NOT deep-link /fragment/ IDs.
+            # Those API fragment URLs often Cloudflare-502 in browsers (NSW host error),
+            # while the topic list on the pack is still the public record the people need.
+            topic_line = "; ".join(topics[:15])
+            items.append(
+                {
+                    "text": (
+                        f"NSW Hansard · {house_name} · {day} · Topics on the public TOC: {topic_line}"
+                    )[:900],
+                    "url": url,
+                    "at": day,
+                    "kind": "hansard",
+                    "house": house_name,
+                    "pdf": (
+                        f"https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/{pdf_id}"
+                        if pdf_id
+                        else None
+                    ),
+                }
+            )
         harvested.append(
             {
                 "date": day,
@@ -511,10 +516,10 @@ def main() -> int:
     health = health_check(feeds)
     hansard = harvest_nsw_hansard(recent_dates(6))
     nsw_items = sum(len(r.get("items") or []) for r in hansard if r.get("ok"))
-    euro = []
-    if nsw_items == 0:
-        # NSW Cloudflare host-error / empty window — keep the ledger moving lawfully
-        euro = harvest_europarl_speeches()
+    # Always harvest EuroParl too — browser-friendly public pages when NSW API flaps
+    euro = harvest_europarl_speeches()
+    if nsw_items == 0 and not any((r.get("items") or []) for r in euro):
+        euro = harvest_europarl_speeches(limit=20)
 
     published = []
     health_pack = make_health_pack(health)
