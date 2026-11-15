@@ -1,18 +1,19 @@
 # Public Voice · Gate check · 15 Nov 2026
 
-## Your screenshot (NSW `/api/hansard`)
+## NSW Cloudflare 502 (your screenshots)
 
-**Not a Public Voice gate.**  
-`https://api.parliament.nsw.gov.au/api/hansard` is **not** a working endpoint. Cloudflare shows **502 Bad gateway** / host error on that bare path.
+**Not a Public Voice gate.** It is **api.parliament.nsw.gov.au host error** behind Cloudflare (Sydney). Browser + Cloudflare working; **origin failing** for some paths/clients (VPN/edge).
 
-| URL | Result | Use? |
-|---|---|---|
-| `/api/hansard` | 404 or Cloudflare 502 | No — do not open |
-| `/api/hansard/search/bydate?date=YYYY-MM-DD` | 200 | Yes — sweep uses this |
-| `/api/hansard/search/year/2026` | 200 | Yes |
+| URL | Notes |
+|---|---|
+| `/api/hansard` | Never a real endpoint — often 404/502 |
+| `/api/hansard/search/bydate?date=…` | Real endpoint; may still 502 when NSW origin flaps |
+| Eng probe (same bydate URL) | Often still **200** while a browser/VPN path shows 502 |
 
-Working example:  
-https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12
+**What we do:** sweep retries 502/503/504; if NSW returns nothing, fall back to **European Parliament Open Data** (public). Public Voice site stays up either way.
+
+Try again in a few minutes, or open the ledger (does not need NSW live in your tab):  
+https://muzz-ai963.github.io/public-voice/gallery.html
 
 ## Full gate pass (probed from eng machine)
 

@@ -13,6 +13,7 @@ import re
 import ssl
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -39,10 +40,31 @@ def iso(dt: datetime) -> str:
     return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def get_json(url: str, timeout: int = 45):
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
-    with urllib.request.urlopen(req, context=CTX, timeout=timeout) as resp:
-        return json.loads(resp.read().decode("utf-8", errors="replace")), resp.status
+def get_json(url: str, timeout: int = 45, retries: int = 4):
+    """Fetch JSON with retries — NSW Cloudflare often 502s intermittently (host error)."""
+    import time
+
+    last_err: Exception | None = None
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(
+                url, headers={"User-Agent": UA, "Accept": "application/json"}
+            )
+            with urllib.request.urlopen(req, context=CTX, timeout=timeout) as resp:
+                return json.loads(resp.read().decode("utf-8", errors="replace")), resp.status
+        except urllib.error.HTTPError as err:
+            last_err = err
+            if err.code in (502, 503, 504, 429) and attempt + 1 < retries:
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            raise
+        except (urllib.error.URLError, TimeoutError) as err:
+            last_err = err
+            if attempt + 1 < retries:
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            raise
+    raise last_err or RuntimeError("get_json failed")
 
 
 def head_or_get_ok(url: str, timeout: int = 20) -> dict:
@@ -185,12 +207,99 @@ def pack_checks(pack: dict) -> list[dict]:
     return checks
 
 
+def harvest_europarl_speeches(limit: int = 12) -> list[dict]:
+    """Fallback public EP speeches when NSW Cloudflare host-errors."""
+    url = (
+        "https://data.europarl.europa.eu/api/v2/speeches"
+        "?format=application%2Fld%2Bjson&offset=0&limit=40"
+    )
+    try:
+        payload, status = get_json(url)
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, urllib.error.HTTPError) as err:
+        return [{"ok": False, "error": str(err), "url": url, "items": [], "source": "europarl"}]
+    items = []
+    for row in payload.get("data") or []:
+        label = row.get("activity_label") or {}
+        text = label.get("en") or label.get("fr") or next(iter(label.values()), None)
+        activity_id = row.get("activity_id") or row.get("id")
+        day = (row.get("activity_date") or "")[:10]
+        if not text or not activity_id or not day:
+            continue
+        if looks_private(text):
+            continue
+        items.append(
+            {
+                "text": f"European Parliament · {text}"[:500],
+                "url": f"https://data.europarl.europa.eu/en/search?query={urllib.parse.quote(str(activity_id))}",
+                "at": day,
+                "kind": "hansard",
+                "pdf": f"https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+            }
+        )
+        if len(items) >= limit:
+            break
+    return [
+        {
+            "date": now_utc().strftime("%Y-%m-%d"),
+            "ok": True,
+            "status": status,
+            "url": url,
+            "items": items,
+            "source": "europarl",
+        }
+    ]
+
+
 def make_hansard_pack(day_row: dict) -> dict | None:
     items = day_row.get("items") or []
     if not items:
         return None
     day = day_row["date"]
-    pack_id = f"auto-nsw-hansard-{day}"
+    source = day_row.get("source") or "nsw-hansard"
+    if source == "europarl":
+        pack_id = f"auto-europarl-{day}"
+        title = f"European Parliament public activity · {day}"
+        country = "EU"
+        subjects = [
+            {
+                "role": "European Parliament (public record)",
+                "org": "European Parliament",
+                "public_office": "https://data.europarl.europa.eu/en/developer-corner/opendata-api",
+            }
+        ]
+        spotlight = (
+            f"Official EP Open Data speeches feed harvested {day} — "
+            "primary activity labels for people to check against press lines."
+        )
+        limits = [
+            "Lawful sweep of public European Parliament Open Data API.",
+            "Not legal advice. Not a guilt finding. Anonymous operators.",
+            "Fallback when NSW Hansard Cloudflare host-errors.",
+            "We do not lodge. No doxx. No classified material.",
+        ]
+        public_note = "EP"
+    else:
+        pack_id = f"auto-nsw-hansard-{day}"
+        title = f"NSW Hansard on the public record · {day}"
+        country = "AU"
+        subjects = [
+            {
+                "role": "NSW Parliament (public record)",
+                "org": "Parliament of New South Wales",
+                "public_office": "https://www.parliament.nsw.gov.au/",
+            }
+        ]
+        spotlight = (
+            f"Official NSW Hansard TOC for {day} is on the public API — "
+            "topics below are primary-source fragments for the people to check against press lines."
+        )
+        limits = [
+            "Lawful sweep of public NSW Hansard API only.",
+            "Not legal advice. Not a guilt finding. Anonymous operators.",
+            "AI/assist structured this pack; primary URLs are the source.",
+            "We do not lodge. No doxx. No classified material.",
+        ]
+        public_note = "NSW Hansard"
     claims = []
     for it in items[:10]:
         claims.append(
@@ -209,29 +318,19 @@ def make_hansard_pack(day_row: dict) -> dict | None:
         "product": "MUZZ Public Voice",
         "id": pack_id,
         "demo": False,
-        "title": f"NSW Hansard on the public record · {day}",
-        "country": "AU",
+        "title": title,
+        "country": country,
         "door": "elected",
-        "subjects": [
-            {
-                "role": "NSW Parliament (public record)",
-                "org": "Parliament of New South Wales",
-                "public_office": "https://www.parliament.nsw.gov.au/hansard/Pages/Hansard-API.aspx",
-                "public_id": "nsw-hansard",
-            }
-        ],
+        "subjects": subjects,
         "claims": claims,
         "silence": [],
         "auth": {
             "status": "matches_source",
-            "spotlight": (
-                f"Official NSW Hansard TOC for {day} is on the public API — "
-                "topics below are primary-source fragments for the people to check against press lines."
-            ),
+            "spotlight": spotlight,
             "method": "ai_assisted_primary",
             "explain_ask": (
-                "Where a ministerial or agency public line touches these topics, "
-                "point to the matching Hansard fragment — or correct the public line."
+                f"Where a public line touches these {public_note} topics, "
+                "point to the matching primary record — or correct the line."
             ),
         },
         "harm": {
@@ -244,12 +343,7 @@ def make_hansard_pack(day_row: dict) -> dict | None:
             "stopped": "",
         },
         "send_status": "not_applicable",
-        "limits": [
-            "Lawful sweep of public NSW Hansard API only.",
-            "Not legal advice. Not a guilt finding. Anonymous operators.",
-            "AI/assist structured this pack; primary URLs are the source.",
-            "We do not lodge. No doxx. No classified material.",
-        ],
+        "limits": limits,
         "seal": {
             "kind": "unsigned_export",
             "name": "Anonymous",
@@ -416,6 +510,11 @@ def main() -> int:
     feeds = load_registry()
     health = health_check(feeds)
     hansard = harvest_nsw_hansard(recent_dates(6))
+    nsw_items = sum(len(r.get("items") or []) for r in hansard if r.get("ok"))
+    euro = []
+    if nsw_items == 0:
+        # NSW Cloudflare host-error / empty window — keep the ledger moving lawfully
+        euro = harvest_europarl_speeches()
 
     published = []
     health_pack = make_health_pack(health)
@@ -424,7 +523,7 @@ def main() -> int:
         path.write_text(json.dumps(health_pack, indent=2) + "\n", encoding="utf-8")
         published.append(health_pack["id"])
 
-    for row in hansard:
+    for row in hansard + euro:
         if not row.get("ok") or not row.get("items"):
             continue
         pack = make_hansard_pack(row)
@@ -442,6 +541,8 @@ def main() -> int:
         "lawful": True,
         "lodged": False,
         "contacted": False,
+        "nsw_items": nsw_items,
+        "fallback_europarl": bool(euro),
         "health": health,
         "hansard_days": [
             {
@@ -449,8 +550,9 @@ def main() -> int:
                 "ok": r.get("ok"),
                 "items": len(r.get("items") or []),
                 "error": r.get("error"),
+                "source": r.get("source"),
             }
-            for r in hansard
+            for r in hansard + euro
         ],
         "published": published,
         "index_count": len(index.get("packs") or []),
