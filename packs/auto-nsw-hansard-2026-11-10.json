@@ -10,8 +10,7 @@
     {
       "role": "NSW Parliament (public record)",
       "org": "Parliament of New South Wales",
-      "public_office": "https://www.parliament.nsw.gov.au/hansard/Pages/Hansard-API.aspx",
-      "public_id": "nsw-hansard"
+      "public_office": "https://www.parliament.nsw.gov.au/"
     }
   ],
   "claims": [
@@ -111,7 +110,7 @@
     "status": "matches_source",
     "spotlight": "Official NSW Hansard TOC for 2026-11-10 is on the public API \u2014 topics below are primary-source fragments for the people to check against press lines.",
     "method": "ai_assisted_primary",
-    "explain_ask": "Where a ministerial or agency public line touches these topics, point to the matching Hansard fragment \u2014 or correct the public line."
+    "explain_ask": "Where a public line touches these NSW Hansard topics, point to the matching primary record \u2014 or correct the line."
   },
   "harm": {
     "summary": "Without a machine-speed public index, official lines can drift from the record while people wait.",
@@ -130,7 +129,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-15T07:41:37Z",
+    "at": "2026-11-15T16:42:43Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -138,7 +137,7 @@
     "entry_hash": null,
     "reason": "Lawful auto-harvest of public parliamentary record"
   },
-  "content_hash": "4ad7d1ce41da04836428ef8851d59d52d9a7244a67b84afd8425870c2188087f",
+  "content_hash": "1c24cc3c1f5694c2e88780d87f8b74935ce96d940526220935cb063f64b9b830",
   "moderation": {
     "auto_checks": [
       {
