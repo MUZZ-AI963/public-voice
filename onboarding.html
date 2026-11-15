@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Voice · Your right to challenge</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #12110e; --card: #1e1c18; --line: #3c3830; --text: #f4f1ea;
+    --muted: #a39e93; --orange: #e3943a; --warn: #3a2412; --warn-line: #c47d32;
+    --green: #39ff14; --green-ink: #06210a;
+  }
+  html[data-theme="light"] {
+    --bg: #f3efe6; --card: #fffdf8; --line: #ddd4c4; --text: #1c1914;
+    --muted: #5e584e; --orange: #b86a12; --warn: #fff4e6; --warn-line: #c47d32;
+    --green: #1faa3a; --green-ink: #06210a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 "Segoe UI", Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 40rem; margin: 0 auto; padding: 28px 20px 56px; }
+  h1 { font-family: Palatino, Georgia, serif; font-weight: 500; font-size: 2rem; margin: 0 0 8px; }
+  h2 { font-family: Palatino, Georgia, serif; font-weight: 500; font-size: 1.25rem; margin: 1.6rem 0 0.4rem; }
+  p, li { color: var(--muted); }
+  strong { color: var(--text); }
+  a { color: var(--orange); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+  .warn { border: 1px solid var(--warn-line); background: var(--warn); border-radius: 8px; padding: 12px 14px; margin: 14px 0; }
+  .pill {
+    display: inline-block; margin: 6px 8px 6px 0; padding: 8px 14px; border-radius: 999px;
+    background: var(--orange); color: #1a1208; text-decoration: none; font-weight: 600; border: 0; cursor: pointer; font: inherit;
+  }
+  .ghost { background: transparent; border: 1px solid var(--line); color: var(--text); }
+  .security-go {
+    display: block; text-align: center; margin: 18px 0;
+    padding: 16px 18px; border-radius: 12px;
+    background: var(--green); color: var(--green-ink);
+    font-weight: 800; font-size: 1.15rem; letter-spacing: 0.01em;
+    text-decoration: none; line-height: 1.35;
+    box-shadow: 0 0 0 3px #0a2a10, 0 0 24px rgba(57, 255, 20, 0.35);
+  }
+  .security-go:hover { filter: brightness(1.06); }
+  .security-go span { display: block; font-weight: 600; font-size: 0.85rem; margin-top: 6px; opacity: 0.9; }
+  ol { padding-left: 1.2rem; }
+  ol li { margin: 6px 0; color: var(--text); }
+  code { font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Public Voice · Your right to challenge</h1>
+  <p>Free for people, worldwide — every laptop. No install store. No account. Anonymous if you choose.</p>
+
+  <a class="security-go" href="./security.html">
+    Recommended security for the people — click here
+    <span>Tor · Tails · Proton VPN · Linux · Kali (toolkit) · defend the channel so AI assist stays on your side</span>
+  </a>
+
+  <a class="security-go" href="./ai-forward.html" style="margin-top:12px;background:#b8f55a">
+    Educate the world: AI is the way forward — click here
+    <span>Not gov misinformation · Not knee-jerk legislation · People + AI + primary sources on every laptop</span>
+  </a>
+
+  <div class="warn">
+    <strong>Three ways in</strong>
+    <p style="margin:8px 0 0">1) Open the hosted HTTPS link (best — works offline after first visit).<br>
+    2) Download the zip and host the folder on any HTTPS (school, library, NGO, your own Pages).<br>
+    3) Run the folder locally with a one-line server so Seal can sign.</p>
+  </div>
+
+  <div class="card">
+    <a class="pill" href="./index.html">Open the desk</a>
+    <a class="pill ghost" href="./gallery.html">Open the ledger</a>
+    <button class="pill ghost" id="install" type="button" hidden>Install on this laptop</button>
+  </div>
+
+  <h2>Windows · Mac · Linux · Chromebook</h2>
+  <ol>
+    <li>Use Chrome, Edge, Firefox, or Safari (current).</li>
+    <li>Prefer <strong>https://</strong> so Seal (Ed25519) and offline install work.</li>
+    <li>After one online visit, the app shell stays on the laptop for offline sound-out.</li>
+  </ol>
+
+  <h2>Zip on this machine (no cloud)</h2>
+  <ol>
+    <li>Unzip <code>muzz-public-voice.zip</code>.</li>
+    <li>In that folder run: <code>python3 -m http.server 8765</code></li>
+    <li>Open <code>http://127.0.0.1:8765/</code> — nothing leaves the laptop until you copy a Send pack yourself.</li>
+  </ol>
+
+  <h2>Mirror for a country or agency</h2>
+  <p>Anyone may host these files under LICENSE. Keep LICENSE. Keep anonymous sound-out. Do not collect form fields on a server unless people agree on that copy.</p>
+
+  <h2>Limits</h2>
+  <p>Primary sources only. No doxx. No classified drops. We do not lodge. Not legal advice. See <a href="./LIMITS.md">LIMITS.md</a>.</p>
+  <p style="color:var(--muted);font-size:0.9rem">Operators unnamed on this face · Free platform for people</p>
+</div>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+let deferred;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferred = e;
+  const btn = document.getElementById("install");
+  btn.hidden = false;
+  btn.onclick = async () => { if (deferred) { deferred.prompt(); deferred = null; btn.hidden = true; } };
+});
+const t = localStorage.getItem("muzz-public-voice-theme");
+if (t) document.documentElement.dataset.theme = t;
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "product": "MUZZ Public Voice",
+  "generated": "2026-11-15",
+  "notice": "Static MVP index. DEMO packs are fictional. Real packs need primary sources, holder seal, and publish checklist pass. This index does not lodge anything.",
+  "packs": [
+    {
+      "id": "demo-foi-silence",
+      "file": "demo-foi-silence.json",
+      "demo": true,
+      "title": "DEMO · FOI clock ran; portal still said under review",
+      "country": "AU",
+      "door": "foi_pid",
+      "auth_status": "silence_past_clock",
+      "silence_days": 61
+    },
+    {
+      "id": "demo-claim-rehash",
+      "file": "demo-claim-rehash.json",
+      "demo": true,
+      "title": "DEMO · Press line repeated; no primary event found",
+      "country": "AU",
+      "door": "official_disinfo",
+      "auth_status": "rehash_unanchored",
+      "silence_days": null
+    }
+  ]
+}

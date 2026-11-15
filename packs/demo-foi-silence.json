@@ -1,0 +1,77 @@
+{
+  "schema": "public-voice-pack/v1",
+  "product": "MUZZ Public Voice",
+  "id": "demo-foi-silence",
+  "demo": true,
+  "title": "DEMO · FOI clock ran; portal still said under review",
+  "country": "AU",
+  "door": "foi_pid",
+  "subjects": [
+    {
+      "role": "FOI contact (fictional agency)",
+      "org": "DEMO Department of Example Services",
+      "public_office": "https://www.example.gov.au/foi"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Your request is under review. We aim to respond within the statutory period.",
+      "url": "https://www.example.gov.au/foi/status/DEMO-2026-0042",
+      "at": "2026-09-01",
+      "kind": "portal_status",
+      "counter_url": "https://www.example.gov.au/foi/status/DEMO-2026-0042",
+      "counter_at": "2026-11-01",
+      "screenshot_hash": null
+    }
+  ],
+  "silence": [
+    {
+      "label": "FOI decision clock (person tracked)",
+      "clock_start": "2026-09-01",
+      "due": "2026-10-01",
+      "status": "under_review",
+      "note": "DEMO: portal text unchanged past the person's tracked due date. Not a finding that a statute was broken.",
+      "clock_basis": "Person tracked ~30 days from request date against the agency's own 'statutory period' line; confirm live OAIC FOI clock before relying."
+    }
+  ],
+  "auth": {
+    "status": "silence_past_clock",
+    "spotlight": "Agency said a statutory-period reply; the same portal line was still 'under review' after the tracked due date — no decision text published.",
+    "method": "demo",
+    "explain_ask": "Please publish the decision date, the decision, or the lawful extension notice for DEMO-2026-0042."
+  },
+  "harm": {
+    "summary": "DEMO: care booking and a benefits review waited on the missing record.",
+    "time": "61 days past request (demo)",
+    "money": "",
+    "stopped": "DEMO: scheduled appointment postponed twice while waiting on the FOI paper."
+  },
+  "send_status": "draft_not_lodged",
+  "limits": [
+    "DEMO pack — fictional names, URLs, and clocks.",
+    "Primary sources only on real packs. AI is not a publishable source.",
+    "Not legal advice. Not a finding of corruption. Draft · not lodged.",
+    "No private home or phone. No classified material."
+  ],
+  "content_hash": "demo-unsigned-no-hash",
+  "seal": {
+    "kind": "demo_unsigned",
+    "name": "Anonymous",
+    "anonymous": true,
+    "at": "2026-11-15T00:00:00Z",
+    "clock_source": "device",
+    "approver_pub": null,
+    "approval_sig": null,
+    "snapshot_hash": null,
+    "entry_hash": null,
+    "reason": "Fictional seed for gallery layout."
+  },
+  "moderation": {
+    "auto_checks": [
+      { "id": "has_source_url", "ok": true, "detail": "demo URL present" },
+      { "id": "no_private_contact", "ok": true, "detail": "public_office only" },
+      { "id": "demo_labelled", "ok": true, "detail": "demo:true" }
+    ],
+    "publish_ready": false
+  }
+}

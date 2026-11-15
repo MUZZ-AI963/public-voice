@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Voice · Your right to challenge</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#e3943a">
+<meta name="description" content="Public Voice ledger — authenticated public statements. Free on every laptop worldwide.">
+<style>
+  :root {
+    --bg: #12110e; --card: #1e1c18; --line: #3c3830; --text: #f4f1ea;
+    --muted: #a39e93; --faint: #7c776e; --orange: #e3943a;
+    --warn: #3a2412; --warn-line: #c47d32; --ok: #c8d4b8; --bad: #e7b4a4;
+    --input: #14130f;
+  }
+  html[data-theme="light"] {
+    --bg: #f3efe6; --card: #fffdf8; --line: #ddd4c4; --text: #1c1914;
+    --muted: #5e584e; --faint: #7a7368; --orange: #b86a12;
+    --warn: #fff4e6; --warn-line: #c47d32; --ok: #1d3b24; --bad: #7a2e22;
+    --input: #fff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); }
+  body { font: 15px/1.45 "Segoe UI", Helvetica, Arial, sans-serif; min-height: 100vh; }
+  button, select, input { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 22px 22px 48px; }
+  header { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+  h1 { font-family: Palatino, "Iowan Old Style", Georgia, serif; font-weight: 500; font-size: 38px; margin: 0; letter-spacing: -0.03em; }
+  .kicker { margin: 8px 0 0; color: var(--muted); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .free { margin: 10px 0 0; color: var(--muted); font-size: 13px; }
+  .pill { background: transparent; border: 1px solid var(--line); color: var(--text); border-radius: 999px; padding: 8px 14px; text-decoration: none; display: inline-block; }
+  .pill:hover { border-color: var(--orange); }
+  .banner { margin-top: 18px; background: #f6f3ec; color: #1c1914; text-align: center; padding: 10px 12px; font-size: 14px; }
+  html[data-theme="light"] .banner { background: #1c1914; color: #f6f3ec; }
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+  label { display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 12px; }
+  select, input { background: var(--input); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 140px; }
+  .list { display: flex; flex-direction: column; gap: 12px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; text-align: left;
+  }
+  .card:hover { border-color: var(--orange); }
+  .tag { display: inline-block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-right: 8px; }
+  .demo { color: var(--bad); font-weight: 600; }
+  .auth { margin: 8px 0; padding: 10px 12px; border-left: 4px solid var(--orange); background: var(--warn); border-radius: 0 8px 8px 0; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .spotlight { margin: 6px 0 0; }
+  .detail { display: none; margin-top: 12px; border-top: 1px solid var(--line); padding-top: 12px; }
+  .detail.open { display: block; }
+  .side { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .box { background: var(--input); border: 1px solid var(--line); border-radius: 8px; padding: 10px; font-size: 13px; }
+  .box strong { display: block; color: var(--orange); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  a { color: var(--orange); }
+  .foot { margin-top: 28px; color: var(--faint); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .limits { margin-top: 18px; border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 8px 12px; font-size: 13px; }
+  .limits summary { cursor: pointer; font-weight: 600; color: var(--muted); list-style: none; }
+  .limits ul { margin: 8px 0 0; padding-left: 1.1rem; color: var(--muted); }
+  .empty { color: var(--muted); padding: 24px 0; }
+  @media (max-width: 700px) {
+    h1 { font-size: 28px; }
+    .side, .filters { grid-template-columns: 1fr; }
+    .filters { display: grid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Public Voice</h1>
+      <p class="kicker">Your right to challenge · Free for people · Sound it out · On their desk to explain</p>
+      <p class="free">Every laptop worldwide · Anonymous sound-out · Operators unnamed on this face</p>
+    </div>
+    <div>
+      <a class="pill" href="./index.html">Open the desk</a>
+      <a class="pill" href="./onboarding.html">Every laptop</a>
+      <a class="pill" href="./security.html" style="background:#39ff14;color:#06210a;border-color:#39ff14;font-weight:700">Security pack</a>
+      <a class="pill" href="./ai-forward.html" style="background:#b8f55a;color:#06210a;border-color:#b8f55a;font-weight:700">AI forward</a>
+      <button class="pill" id="theme" type="button">Theme</button>
+    </div>
+  </header>
+  <div class="banner">Open on any laptop. People sound out public lines that don’t stack. AI assists — only primary sources publish.</div>
+
+  <div class="filters">
+    <label>Country<select id="fCountry"><option value="">All</option></select></label>
+    <label>Door<select id="fDoor"><option value="">All</option></select></label>
+    <label>Auth status<select id="fAuth"><option value="">All</option></select></label>
+    <label>Search<input id="fQ" type="search" placeholder="Title or org"></label>
+  </div>
+
+  <div class="list" id="list"></div>
+  <p class="empty" id="empty" hidden>No packs match.</p>
+
+  <details class="limits">
+    <summary>Limits</summary>
+    <ul>
+      <li>Free platform for people. Anonymous sound-out allowed.</li>
+      <li>Authentication status is structural against sources — not a court finding, not “corrupt.”</li>
+      <li>DEMO packs are fictional seeds for layout.</li>
+      <li>No doxx. No classified drops. This gallery lodges nothing.</li>
+      <li>Correction path for subjects: Phase B+. See <a href="./LIMITS.md">LIMITS.md</a>.</li>
+    </ul>
+  </details>
+  <p class="foot">Free platform for people · Anonymous sound-out · Static MVP · General information, not legal advice · See LICENSE</p>
+</div>
+<script>
+const AUTH_LABEL = {
+  matches_source: "Matches source",
+  contradicted_by_source: "Contradicted by source",
+  no_event_found: "No event found",
+  silence_past_clock: "Silence past clock",
+  rehash_unanchored: "Rehash · unanchored",
+  awaiting_sources: "Awaiting sources",
+  correction_lodged: "Correction lodged"
+};
+const DOOR_LABEL = {
+  elected: "Elected official",
+  agency: "Agency",
+  defence_dva: "Defence / DVA",
+  clearance_contractor: "Clearance / contractor",
+  intelligence_public: "Intelligence (public channel)",
+  official_disinfo: "Official press line",
+  foi_pid: "FOI / PID",
+  care_record: "Care record",
+  other: "Other"
+};
+
+let index = { packs: [] };
+let cache = {};
+
+const savedTheme = localStorage.getItem("muzz-public-voice-theme");
+if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+document.getElementById("theme").onclick = () => {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem("muzz-public-voice-theme", next);
+};
+
+function esc(s) {
+  return String(s || "").replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+}
+
+async function loadPack(meta) {
+  if (cache[meta.id]) return cache[meta.id];
+  const res = await fetch("./packs/" + meta.file);
+  if (!res.ok) throw new Error("pack load failed: " + meta.id);
+  const pack = await res.json();
+  cache[meta.id] = pack;
+  return pack;
+}
+
+function fillFilters() {
+  const countries = [...new Set(index.packs.map((p) => p.country))].sort();
+  const doors = [...new Set(index.packs.map((p) => p.door))].sort();
+  const auths = [...new Set(index.packs.map((p) => p.auth_status))].sort();
+  const add = (sel, vals, labelFn) => {
+    vals.forEach((v) => {
+      const o = document.createElement("option");
+      o.value = v;
+      o.textContent = labelFn ? labelFn(v) : v;
+      sel.appendChild(o);
+    });
+  };
+  add(document.getElementById("fCountry"), countries);
+  add(document.getElementById("fDoor"), doors, (d) => DOOR_LABEL[d] || d);
+  add(document.getElementById("fAuth"), auths, (a) => AUTH_LABEL[a] || a);
+}
+
+function filtered() {
+  const c = document.getElementById("fCountry").value;
+  const d = document.getElementById("fDoor").value;
+  const a = document.getElementById("fAuth").value;
+  const q = document.getElementById("fQ").value.trim().toLowerCase();
+  return index.packs.filter((p) => {
+    if (c && p.country !== c) return false;
+    if (d && p.door !== d) return false;
+    if (a && p.auth_status !== a) return false;
+    if (q && !(p.title || "").toLowerCase().includes(q) && !(p.id || "").toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+
+async function render() {
+  const list = document.getElementById("list");
+  const rows = filtered();
+  document.getElementById("empty").hidden = rows.length > 0;
+  list.innerHTML = "";
+  for (const meta of rows) {
+    let pack;
+    try { pack = await loadPack(meta); }
+    catch (err) {
+      list.innerHTML += `<article class="card"><p class="meta">Could not load ${esc(meta.id)}</p></article>`;
+      continue;
+    }
+    const claim = (pack.claims && pack.claims[0]) || {};
+    const silence = (pack.silence && pack.silence[0]) || null;
+    const auth = pack.auth || {};
+    const art = document.createElement("article");
+    art.className = "card";
+    art.innerHTML = `
+      <div>
+        ${pack.demo ? '<span class="tag demo">DEMO</span>' : ''}
+        <span class="tag">${esc(AUTH_LABEL[auth.status] || meta.auth_status)}</span>
+        <span class="tag">${esc(DOOR_LABEL[pack.door] || pack.door)}</span>
+        <span class="tag">${esc(pack.country)}</span>
+      </div>
+      <h2 style="font-family:Palatino,Georgia,serif;font-weight:500;font-size:22px;margin:8px 0 4px">${esc(pack.title)}</h2>
+      <p class="meta">${esc((pack.subjects || []).map((s) => s.org).join(" · "))}</p>
+      <div class="auth">
+        <strong>Spotlight</strong>
+        <p class="spotlight">${esc(auth.spotlight || "")}</p>
+      </div>
+      <div class="actions" style="margin-top:10px">
+        <button type="button" class="pill" data-open="${esc(pack.id)}">Open authentication</button>
+      </div>
+      <div class="detail" id="d-${esc(pack.id)}">
+        <div class="side">
+          <div class="box"><strong>Public statement</strong>${esc(claim.text || "")}<br><a href="${esc(claim.url || "#")}" target="_blank" rel="noopener noreferrer">Primary source</a> · ${esc(claim.at || "")}</div>
+          <div class="box"><strong>Later fact / check</strong>${claim.counter_url ? `<a href="${esc(claim.counter_url)}" target="_blank" rel="noopener noreferrer">Counter source</a> · ${esc(claim.counter_at || "")}` : "No counter URL"}</div>
+        </div>
+        ${silence ? `<p class="meta" style="margin-top:10px">Silence clock: ${esc(silence.clock_start)} → due ${esc(silence.due || "—")} · ${esc(silence.status)} · ${esc(silence.clock_basis || "")}</p>` : ""}
+        <p class="meta" style="margin-top:10px"><strong>Explain ask:</strong> ${esc(auth.explain_ask || "")}</p>
+        <p class="meta"><strong>People's cost:</strong> ${esc((pack.harm && pack.harm.summary) || "")}</p>
+        <p class="meta">Method: ${esc(auth.method || "")} · Send: ${esc(pack.send_status || "")} · Seal: ${esc((pack.seal && pack.seal.kind) || "")}</p>
+      </div>`;
+    list.appendChild(art);
+  }
+  list.querySelectorAll("[data-open]").forEach((btn) => {
+    btn.onclick = () => {
+      const el = document.getElementById("d-" + btn.dataset.open);
+      if (el) el.classList.toggle("open");
+    };
+  });
+}
+
+["fCountry", "fDoor", "fAuth", "fQ"].forEach((id) => {
+  document.getElementById(id).addEventListener("input", render);
+  document.getElementById(id).addEventListener("change", render);
+});
+
+fetch("./packs/index.json")
+  .then((r) => r.json())
+  .then((data) => {
+    index = data;
+    fillFilters();
+    return render();
+  })
+  .catch(() => {
+    document.getElementById("list").innerHTML = "<p class='empty'>Could not load packs/index.json. Open via https:// or http://127.0.0.1 (see onboarding) — not raw file://.</p>";
+  });
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+</script>
+</body>
+</html>

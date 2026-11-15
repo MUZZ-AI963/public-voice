@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Voice · Your right to challenge · Security</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #12110e; --card: #1e1c18; --line: #3c3830; --text: #f4f1ea;
+    --muted: #a39e93; --orange: #e3943a; --warn: #3a2412; --warn-line: #c47d32;
+    --green: #39ff14; --green-ink: #06210a; --green-dim: #1a3d22;
+  }
+  html[data-theme="light"] {
+    --bg: #f3efe6; --card: #fffdf8; --line: #ddd4c4; --text: #1c1914;
+    --muted: #5e584e; --orange: #b86a12; --warn: #fff4e6; --warn-line: #c47d32;
+    --green: #1faa3a; --green-ink: #06210a; --green-dim: #e8f8e9;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 "Segoe UI", Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 42rem; margin: 0 auto; padding: 28px 20px 56px; }
+  h1 { font-family: Palatino, Georgia, serif; font-weight: 500; font-size: 2rem; margin: 0 0 8px; }
+  h2 { font-family: Palatino, Georgia, serif; font-weight: 500; font-size: 1.25rem; margin: 1.6rem 0 0.4rem; }
+  p, li { color: var(--muted); }
+  strong { color: var(--text); }
+  a { color: var(--orange); }
+  .hero {
+    margin: 16px 0; padding: 16px 18px; border-radius: 12px;
+    background: var(--green-dim); border: 2px solid var(--green);
+  }
+  .hero p { color: var(--text); margin: 8px 0 0; }
+  .pack {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; margin: 12px 0;
+  }
+  .pack h3 { margin: 0 0 6px; font-size: 1.05rem; color: var(--text); }
+  .go {
+    display: inline-block; margin-top: 8px; padding: 10px 16px; border-radius: 999px;
+    background: var(--green); color: var(--green-ink); font-weight: 700; text-decoration: none;
+    box-shadow: 0 0 0 1px var(--green);
+  }
+  .go:hover { filter: brightness(1.08); }
+  .pill {
+    display: inline-block; margin: 6px 8px 6px 0; padding: 8px 14px; border-radius: 999px;
+    background: transparent; border: 1px solid var(--line); color: var(--text); text-decoration: none; font-weight: 600;
+  }
+  .warn { border: 1px solid var(--warn-line); background: var(--warn); border-radius: 8px; padding: 12px 14px; margin: 14px 0; }
+  ol, ul { padding-left: 1.2rem; }
+  ol li, ul li { margin: 6px 0; color: var(--text); }
+  .foot { color: var(--muted); font-size: 0.9rem; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p><a class="pill" href="./onboarding.html">← Every laptop</a> <a class="pill" href="./index.html">Desk</a></p>
+  <h1>People’s security pack</h1>
+  <p>If you sound out power, protect the channel. Censorship and control travel through the network and the device. These tools are a <strong>reasonable defence</strong> so people — and AI assist on the people’s side — can still reach primary sources and put an explain-ask on the desk.</p>
+
+  <div class="hero">
+    <strong style="color:var(--green)">Why this matters now</strong>
+    <p>Authoritarian control does not only silence a letter. It throttles search, blocks mirrors, watches the default browser, and tries to keep machine-speed history away from ordinary people. Tor, a amnesic OS, a no-logs VPN, and a Linux base are how many people keep a lawful public-record path open. Public Voice stays primary-source only; this page is so you can <em>reach</em> those sources and stay anonymous when you choose.</p>
+  </div>
+
+  <h2>Full package (official links only)</h2>
+
+  <article class="pack">
+    <h3>1 · Tor Browser</h3>
+    <p>Routes traffic through volunteer relays so your ISP and the site see less of who you are. Use it when opening Public Voice, Hansard, FOI pages, or mirrors in a hostile network.</p>
+    <a class="go" href="https://www.torproject.org/download/" target="_blank" rel="noopener noreferrer">Get Tor Browser (torproject.org)</a>
+  </article>
+
+  <article class="pack">
+    <h3>2 · Tails OS</h3>
+    <p>Amnesic Linux you run from USB: leaves little on the laptop’s disk, forces Tor for outbound traffic. For high-risk sound-out sessions when the machine itself may be watched or shared.</p>
+    <a class="go" href="https://tails.net/" target="_blank" rel="noopener noreferrer">Get Tails (tails.net)</a>
+  </article>
+
+  <article class="pack">
+    <h3>3 · Proton VPN</h3>
+    <p>Encrypts the path to the open internet when Tor is blocked or too slow. Prefer the publisher’s own apps and published no-logs posture; verify on their site.</p>
+    <a class="go" href="https://protonvpn.com/" target="_blank" rel="noopener noreferrer">Get Proton VPN (protonvpn.com)</a>
+  </article>
+
+  <article class="pack">
+    <h3>4 · Linux (daily OS)</h3>
+    <p>A free OS you control. Fewer silent vendor locks; easier to keep tools honest. Start with a mainstream desktop (Debian / Ubuntu / Fedora) for every-day work, then add Tor.</p>
+    <a class="go" href="https://www.debian.org/distrib/" target="_blank" rel="noopener noreferrer">Debian download</a>
+    <a class="go" href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener noreferrer">Ubuntu desktop</a>
+  </article>
+
+  <article class="pack">
+    <h3>5 · Kali Linux (security toolkit)</h3>
+    <p>A Linux distro packed for security research and defence testing — for people who need that toolkit. It is <strong>not</strong> required to use Public Voice. It is <strong>not</strong> a guide to attack others. Use only on systems you are allowed to test; keep the people’s ledger on primary sources and lawful pathways.</p>
+    <a class="go" href="https://www.kali.org/get-kali/" target="_blank" rel="noopener noreferrer">Get Kali (kali.org)</a>
+  </article>
+
+  <h2>Suggested stack</h2>
+  <ol>
+    <li><strong>Everyday:</strong> Linux desktop + Tor Browser (+ Proton VPN if the network blocks Tor).</li>
+    <li><strong>Higher risk:</strong> Tails from USB → Tor → Public Voice desk → anonymous seal → copy Send pack yourself.</li>
+    <li><strong>Toolkit users:</strong> Kali only where you already understand defensive/research use — still open Public Voice in Tor when sounding out.</li>
+  </ol>
+
+  <div class="warn">
+    <strong>Limits</strong>
+    <p style="margin:8px 0 0">This page does not teach hacking, evasion of a lawful court order, or access to classified material. It points to public privacy tools so people can stay informed and sound out <em>public</em> records. Not legal advice. Cursor contacts no one. Download only from the official domains above.</p>
+  </div>
+
+  <p class="foot">Free platform for people · Anonymous sound-out · Operators unnamed on this face</p>
+</div>
+<script>
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(() => {});
+const t = localStorage.getItem("muzz-public-voice-theme");
+if (t) document.documentElement.dataset.theme = t;
+</script>
+</body>
+</html>

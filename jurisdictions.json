@@ -1,0 +1,139 @@
+{
+  "reviewed": "2026-11-15",
+  "reviewer": "Cursor, Australia/Brisbane — Public Voice clocks pass",
+  "notice": "General information, not legal advice. A 14-day ask in a letter is the person's deadline, not a statute. FOI/complaint clocks below are only what the named official page said on the review date. This product does not lodge.",
+  "jurisdictions": [
+    {
+      "id": "AU",
+      "name": "Australia",
+      "foi_name": "Freedom of Information",
+      "foi_clock": "Commonwealth FOI Act: agency decision ordinarily within 30 days of receiving the request (extensions exist). Checked via OAIC FOI pages 15 Nov 2026 — confirm on the live page before relying.",
+      "foi_url": "https://www.oaic.gov.au/freedom-of-information/your-foi-rights/make-an-foi-request",
+      "ombudsman_name": "Commonwealth Ombudsman",
+      "ombudsman_url": "https://www.ombudsman.gov.au/complaints",
+      "parliament_complaint": "https://www.aph.gov.au/About_Parliament/Parliamentary_Departments/Parliamentary_Library/pubs/rp/rp1819/Quick_Guides/MakingAComplaint",
+      "channels": [
+        {
+          "id": "subject",
+          "title": "1 · Public office / agency (spotlight ask)",
+          "when": "Always first when you want an explanation on the record.",
+          "open": null,
+          "paste": "subject"
+        },
+        {
+          "id": "foi",
+          "title": "2 · FOI request (process / admin records)",
+          "when": "When you need the agency's own paper on a non-exempt admin process. Not for classified material.",
+          "open": "https://www.oaic.gov.au/freedom-of-information/your-foi-rights/make-an-foi-request",
+          "paste": "foi"
+        },
+        {
+          "id": "ombudsman",
+          "title": "3 · Ombudsman",
+          "when": "After the agency step failed or the clock ran with silence / redirect.",
+          "open": "https://www.ombudsman.gov.au/complaints",
+          "paste": "ombudsman"
+        }
+      ]
+    },
+    {
+      "id": "NZ",
+      "name": "New Zealand",
+      "foi_name": "Official Information Act",
+      "foi_clock": "Use the Ombudsman's OIA guidance for timeframes. Do not invent a day count here.",
+      "foi_url": "https://www.ombudsman.parliament.nz/what-ombudsman-can-help/official-information-requests",
+      "ombudsman_name": "Office of the Ombudsman",
+      "ombudsman_url": "https://www.ombudsman.parliament.nz/",
+      "parliament_complaint": null,
+      "channels": [
+        {
+          "id": "subject",
+          "title": "1 · Agency / office (spotlight ask)",
+          "when": "First.",
+          "open": null,
+          "paste": "subject"
+        },
+        {
+          "id": "foi",
+          "title": "2 · OIA request",
+          "when": "For official information the agency holds.",
+          "open": "https://www.ombudsman.parliament.nz/what-ombudsman-can-help/official-information-requests",
+          "paste": "foi"
+        },
+        {
+          "id": "ombudsman",
+          "title": "3 · Ombudsman",
+          "when": "After the agency step.",
+          "open": "https://www.ombudsman.parliament.nz/",
+          "paste": "ombudsman"
+        }
+      ]
+    },
+    {
+      "id": "UK",
+      "name": "United Kingdom",
+      "foi_name": "Freedom of Information Act 2000",
+      "foi_clock": "ICO: public authorities usually have 20 working days. Confirm on the live ICO page.",
+      "foi_url": "https://ico.org.uk/for-the-public/official-information/",
+      "ombudsman_name": "Parliamentary and Health Service Ombudsman (MP route for many cases)",
+      "ombudsman_url": "https://www.ombudsman.org.uk/",
+      "parliament_complaint": "https://www.parliament.uk/get-involved/contact-an-mp-or-lord/",
+      "channels": [
+        {
+          "id": "subject",
+          "title": "1 · Public authority (spotlight ask)",
+          "when": "First.",
+          "open": null,
+          "paste": "subject"
+        },
+        {
+          "id": "foi",
+          "title": "2 · FOI request",
+          "when": "For recorded information the authority holds.",
+          "open": "https://ico.org.uk/for-the-public/official-information/",
+          "paste": "foi"
+        },
+        {
+          "id": "ombudsman",
+          "title": "3 · Ombudsman / MP route",
+          "when": "As their pages require.",
+          "open": "https://www.ombudsman.org.uk/",
+          "paste": "ombudsman"
+        }
+      ]
+    },
+    {
+      "id": "US",
+      "name": "United States",
+      "foi_name": "FOIA",
+      "foi_clock": "Do not invent a single federal day count here. Use the agency's FOIA page and FOIA.gov.",
+      "foi_url": "https://www.foia.gov/",
+      "ombudsman_name": "Agency FOIA Public Liaison / OGIS",
+      "ombudsman_url": "https://www.archives.gov/ogis",
+      "parliament_complaint": null,
+      "channels": [
+        {
+          "id": "subject",
+          "title": "1 · Agency / office (spotlight ask)",
+          "when": "First.",
+          "open": null,
+          "paste": "subject"
+        },
+        {
+          "id": "foi",
+          "title": "2 · FOIA request",
+          "when": "Via FOIA.gov or the agency portal.",
+          "open": "https://www.foia.gov/",
+          "paste": "foi"
+        },
+        {
+          "id": "ombudsman",
+          "title": "3 · OGIS / liaison",
+          "when": "Process help, not a substitute for the request.",
+          "open": "https://www.archives.gov/ogis",
+          "paste": "ombudsman"
+        }
+      ]
+    }
+  ]
+}

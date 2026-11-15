@@ -1,0 +1,68 @@
+{
+  "schema": "public-voice-pack/v1",
+  "product": "MUZZ Public Voice",
+  "id": "demo-claim-rehash",
+  "demo": true,
+  "title": "DEMO · Press line repeated; no primary event found",
+  "country": "AU",
+  "door": "official_disinfo",
+  "subjects": [
+    {
+      "role": "Minister (fictional portfolio)",
+      "org": "DEMO Office of the Minister for Example",
+      "public_office": "https://www.example.gov.au/minister/media"
+    }
+  ],
+  "claims": [
+    {
+      "text": "We delivered the Example Corridor upgrades on time and under budget in 2025.",
+      "url": "https://www.example.gov.au/minister/media/2026-03-12-corridor",
+      "at": "2026-03-12",
+      "kind": "press_line",
+      "counter_url": "https://www.example.gov.au/projects/example-corridor",
+      "counter_at": "2026-11-01",
+      "screenshot_hash": null
+    }
+  ],
+  "silence": [],
+  "auth": {
+    "status": "rehash_unanchored",
+    "spotlight": "The 2026 press line repeats a 2025 'delivered on time' claim; the project's own public page still lists status as planning — no completion notice, no budget outturn.",
+    "method": "demo",
+    "explain_ask": "Please point to the primary completion notice and the published budget outturn that match the 12 Mar 2026 media line — or correct the line."
+  },
+  "harm": {
+    "summary": "DEMO: local businesses planned stock and hire on the published delivery claim; the corridor works had not started.",
+    "time": "eight months of planning against a claim with no event page",
+    "money": "",
+    "stopped": "DEMO: two shopfit contracts deferred when site access never opened."
+  },
+  "send_status": "draft_not_lodged",
+  "limits": [
+    "DEMO pack — fictional names, URLs, and events.",
+    "Authentication status is structural against sources, not a court finding.",
+    "AI may later help find source mismatches; only primary URLs publish.",
+    "Not legal advice. Draft · not lodged. No doxx. No classified drops."
+  ],
+  "content_hash": "demo-unsigned-no-hash",
+  "seal": {
+    "kind": "demo_unsigned",
+    "name": "Anonymous",
+    "anonymous": true,
+    "at": "2026-11-15T00:00:00Z",
+    "clock_source": "device",
+    "approver_pub": null,
+    "approval_sig": null,
+    "snapshot_hash": null,
+    "entry_hash": null,
+    "reason": "Fictional seed for gallery layout."
+  },
+  "moderation": {
+    "auto_checks": [
+      { "id": "has_source_url", "ok": true, "detail": "claim and counter URLs present" },
+      { "id": "no_private_contact", "ok": true, "detail": "public_office only" },
+      { "id": "demo_labelled", "ok": true, "detail": "demo:true" }
+    ],
+    "publish_ready": false
+  }
+}

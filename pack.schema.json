@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://muzz.ai/schemas/public-voice-pack-v1.json",
+  "title": "Public Voice sealed pack",
+  "description": "Authenticated accountability pack: public statement → primary sources → silence or contradiction. AI may assist discovery; only primary sources publish. No doxx. No classified material.",
+  "type": "object",
+  "required": ["schema", "product", "id", "demo", "country", "door", "subjects", "claims", "silence", "harm", "auth", "limits", "seal"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "public-voice-pack/v1"
+    },
+    "product": {
+      "type": "string",
+      "const": "MUZZ Public Voice"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128,
+      "pattern": "^[a-zA-Z0-9._-]+$"
+    },
+    "demo": {
+      "type": "boolean",
+      "description": "True for fictional seed packs. Must stay labelled DEMO in the gallery."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 200
+    },
+    "country": {
+      "type": "string",
+      "enum": ["AU", "NZ", "UK", "EU", "US", "CA", "OTHER"]
+    },
+    "door": {
+      "type": "string",
+      "enum": [
+        "elected",
+        "agency",
+        "defence_dva",
+        "clearance_contractor",
+        "intelligence_public",
+        "official_disinfo",
+        "foi_pid",
+        "care_record",
+        "other"
+      ]
+    },
+    "subjects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["role", "org"],
+        "additionalProperties": false,
+        "properties": {
+          "role": { "type": "string" },
+          "org": { "type": "string" },
+          "public_office": {
+            "type": ["string", "null"],
+            "description": "Public office URL or published switchboard only. Never private home/phone."
+          }
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Each public statement under authentication. Requires a primary-source URL.",
+      "items": {
+        "type": "object",
+        "required": ["text", "url", "at"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string", "minLength": 8 },
+          "url": {
+            "type": "string",
+            "minLength": 8,
+            "description": "Primary source for the claim itself."
+          },
+          "at": { "type": "string" },
+          "kind": {
+            "type": "string",
+            "enum": ["public_statement", "foi_reply", "portal_status", "hansard", "press_line", "correction", "other"]
+          },
+          "counter_url": {
+            "type": ["string", "null"],
+            "description": "Later official correction, contradicting primary source, or empty-event check URL."
+          },
+          "counter_at": { "type": ["string", "null"] },
+          "screenshot_hash": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "silence": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["clock_start", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string" },
+          "clock_start": { "type": "string" },
+          "due": { "type": ["string", "null"] },
+          "status": {
+            "type": "string",
+            "enum": ["open", "answered", "refused", "redirect_loop", "under_review", "withdrawn"]
+          },
+          "note": { "type": "string" },
+          "clock_basis": {
+            "type": "string",
+            "description": "Person's asked deadline, published SLA, or named statutory clock — say which."
+          }
+        }
+      }
+    },
+    "auth": {
+      "type": "object",
+      "required": ["status", "spotlight"],
+      "additionalProperties": false,
+      "description": "Automated authentication row. Status is structural against sources — not a legal finding.",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "matches_source",
+            "contradicted_by_source",
+            "no_event_found",
+            "silence_past_clock",
+            "rehash_unanchored",
+            "awaiting_sources",
+            "correction_lodged"
+          ]
+        },
+        "spotlight": {
+          "type": "string",
+          "minLength": 8,
+          "description": "One-line spotlight: what the official said vs what the sources show (or fail to show)."
+        },
+        "method": {
+          "type": "string",
+          "enum": ["holder_structured", "ai_assisted_primary", "demo"],
+          "description": "holder_structured = person filled sources. ai_assisted_primary = tool suggested matches; every URL still human-held primary. demo = fictional."
+        },
+        "explain_ask": {
+          "type": "string",
+          "description": "The question put in the spotlight for the subject to answer (person sends; we do not lodge)."
+        }
+      }
+    },
+    "harm": {
+      "type": "object",
+      "required": ["summary"],
+      "additionalProperties": false,
+      "properties": {
+        "summary": { "type": "string", "minLength": 8 },
+        "time": { "type": "string" },
+        "money": { "type": "string" },
+        "stopped": { "type": "string" }
+      }
+    },
+    "send_status": {
+      "type": "string",
+      "enum": ["draft_not_lodged", "person_sent", "not_applicable"],
+      "default": "draft_not_lodged"
+    },
+    "limits": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "content_hash": { "type": "string" },
+    "seal": {
+      "type": "object",
+      "required": ["kind", "clock_source"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["holder_seal", "unsigned_export", "demo_unsigned"]
+        },
+        "name": { "type": "string", "description": "Display name on seal. Use Anonymous for anonymous sound-out." },
+        "anonymous": { "type": "boolean", "default": true },
+        "at": { "type": "string" },
+        "clock_source": { "type": "string", "const": "device" },
+        "approver_pub": { "type": ["string", "null"] },
+        "approval_sig": { "type": ["string", "null"] },
+        "snapshot_hash": { "type": ["string", "null"] },
+        "entry_hash": { "type": ["string", "null"] },
+        "reason": { "type": "string" }
+      }
+    },
+    "moderation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "auto_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "ok"],
+            "properties": {
+              "id": { "type": "string" },
+              "ok": { "type": "boolean" },
+              "detail": { "type": "string" }
+            }
+          }
+        },
+        "publish_ready": { "type": "boolean" }
+      }
+    }
+  }
+}
