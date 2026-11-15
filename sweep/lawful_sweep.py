@@ -68,11 +68,20 @@ def load_registry() -> list:
 def health_check(feeds: list) -> list:
     out = []
     for feed in feeds:
-        base = feed.get("base_url") or feed.get("docs_url")
+        # Prefer probe_url — bare API roots (e.g. /api/hansard) often 404/Cloudflare 502
+        # and are not real endpoints. Sweep harvest uses concrete search paths.
+        base = feed.get("probe_url") or feed.get("base_url") or feed.get("docs_url")
         if not base:
             continue
         row = head_or_get_ok(base)
-        row.update({"id": feed.get("id"), "kind": feed.get("kind"), "name": feed.get("name")})
+        row.update(
+            {
+                "id": feed.get("id"),
+                "kind": feed.get("kind"),
+                "name": feed.get("name"),
+                "probed": base,
+            }
+        )
         out.append(row)
     return out
 

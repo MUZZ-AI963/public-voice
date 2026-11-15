@@ -1,16 +1,17 @@
 {
   "reviewed": "2026-11-15",
-  "notice": "Curated primary / open feeds for AI-assisted authentication. Confirm live before production fetch. Public-role identity only. No private contact scraping. Cursor contacts no one.",
+  "notice": "Curated primary / open feeds for AI-assisted authentication. Use probe_url for health checks — bare API roots often 404/502 and are not real endpoints. Public-role identity only. No private contact scraping. Cursor contacts no one.",
   "feeds": [
     {
       "id": "nsw-hansard",
       "country": "AU",
       "kind": "hansard",
       "name": "NSW Parliament Hansard API",
-      "base_url": "https://api.parliament.nsw.gov.au/api/hansard",
+      "base_url": "https://api.parliament.nsw.gov.au/api/hansard/search/year/2026",
+      "probe_url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12",
       "docs_url": "https://www.parliament.nsw.gov.au/hansard/Pages/Hansard-API.aspx",
       "identity": "speaker / member fields on fragments",
-      "notes": "1991–present. Copyright and conditions of use on Parliament site."
+      "notes": "Do NOT open /api/hansard alone — Cloudflare may 502/404. Use search/bydate or search/year. 1991–present."
     },
     {
       "id": "uk-parliament-api",
@@ -18,9 +19,10 @@
       "kind": "parliament",
       "name": "UK Parliament API",
       "base_url": "https://api.parliament.uk/",
+      "probe_url": "https://api.parliament.uk/",
       "docs_url": "https://developer.parliament.uk/",
       "identity": "Members APIs / id.parliament.uk",
-      "notes": "Open Parliament Licence."
+      "notes": "Open Parliament Licence. Docs site may bot-block; API root is the probe."
     },
     {
       "id": "uk-historic-hansard",
@@ -28,6 +30,7 @@
       "kind": "hansard",
       "name": "Historic Hansard JSON",
       "base_url": "https://api.parliament.uk/historic-hansard/",
+      "probe_url": "https://api.parliament.uk/historic-hansard/api",
       "docs_url": "https://api.parliament.uk/historic-hansard/api",
       "identity": "person URLs + .js",
       "notes": "Add .js for JSON."
@@ -38,9 +41,10 @@
       "kind": "civic_hansard",
       "name": "TheyWorkForYou API",
       "base_url": "https://www.theyworkforyou.com/api/",
+      "probe_url": "https://www.theyworkforyou.com/api/docs/",
       "docs_url": "https://www.theyworkforyou.com/api/docs/",
       "identity": "getPerson / getMP — public parliamentary identity",
-      "notes": "API key required. Explicitly does not expose private politician contact details."
+      "notes": "API key required for data calls. Explicitly does not expose private politician contact details."
     },
     {
       "id": "europarl-opendata",
@@ -48,17 +52,19 @@
       "kind": "parliament",
       "name": "European Parliament Open Data API v2",
       "base_url": "https://data.europarl.europa.eu/api/v2",
+      "probe_url": "https://data.europarl.europa.eu/api/v2",
       "docs_url": "https://data.europarl.europa.eu/en/developer-corner/opendata-api",
       "identity": "MEP ids, speeches",
       "notes": "Rate limit ~500 req / 5 min."
     },
     {
       "id": "everypolitician",
-      "country": "MULTI",
+      "country": "OTHER",
       "kind": "identity",
       "name": "EveryPolitician Popolo",
       "base_url": "https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json",
-      "docs_url": "https://docs.everypolitician.org/use_the_data.html",
+      "probe_url": "https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json",
+      "docs_url": "https://github.com/everypolitician/everypolitician-data",
       "identity": "Popolo JSON membership — public roles",
       "notes": "Download datasets; no live query API. Use for public_id mapping only."
     },
@@ -68,9 +74,10 @@
       "kind": "pathway",
       "name": "OAIC FOI rights",
       "base_url": "https://www.oaic.gov.au/freedom-of-information/your-foi-rights/make-an-foi-request",
+      "probe_url": "https://www.oaic.gov.au/",
       "docs_url": "https://www.oaic.gov.au/freedom-of-information/your-foi-rights/make-an-foi-request",
       "identity": null,
-      "notes": "Pathway URL for Send pack — not a scrape target for secrets."
+      "notes": "Pathway for humans. WAF may 403 automated probes; browser still opens."
     },
     {
       "id": "au-ombudsman",
@@ -78,9 +85,10 @@
       "kind": "pathway",
       "name": "Commonwealth Ombudsman complaints",
       "base_url": "https://www.ombudsman.gov.au/complaints",
+      "probe_url": "https://www.ombudsman.gov.au/",
       "docs_url": "https://www.ombudsman.gov.au/complaints",
       "identity": null,
-      "notes": "Pathway only."
+      "notes": "Pathway for humans. WAF may 403 automated probes."
     },
     {
       "id": "us-foia",
@@ -88,16 +96,18 @@
       "kind": "pathway",
       "name": "FOIA.gov",
       "base_url": "https://www.foia.gov/",
+      "probe_url": "https://www.foia.gov/",
       "docs_url": "https://www.foia.gov/",
       "identity": null,
       "notes": "Confirm agency portals live before hard-coding clocks."
     },
     {
       "id": "claimreview",
-      "country": "MULTI",
+      "country": "OTHER",
       "kind": "interop",
       "name": "Schema.org ClaimReview",
       "base_url": "https://schema.org/ClaimReview",
+      "probe_url": "https://schema.org/ClaimReview",
       "docs_url": "https://www.factcheckinsights.org/guide",
       "identity": "itemReviewed.author as published speaker",
       "notes": "Interop shape. Third-party ratings are optional counter links, not our seal."
