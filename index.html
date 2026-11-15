@@ -126,11 +126,11 @@
 
   <section class="card" id="reportCard" hidden>
     <h2>3 · Formal report · ready to email</h2>
-    <p class="help">Draft · not lodged. You copy; you send. This page lodges nothing.</p>
+    <p class="help">Draft · not lodged. You copy; you send. This page lodges nothing. Tip: long reports break Thunderbird if stuffed into a mailto link — we copy the full text, then open a short compose stub.</p>
     <div class="letter" id="report"></div>
     <div class="row">
       <button class="primary" id="copyReport" type="button">Copy report for email</button>
-      <button class="pill" id="mailto" type="button">Open mail draft</button>
+      <button class="pill" id="mailto" type="button">Open Thunderbird / mail (paste report)</button>
     </div>
   </section>
 
@@ -629,12 +629,26 @@ document.getElementById("run").onclick = runAI;
 document.getElementById("doSeal").onclick = doSeal;
 document.getElementById("copyReport").onclick = async () => {
   await navigator.clipboard.writeText(state.report || "");
-  document.getElementById("copyReport").textContent = "Copied";
+  document.getElementById("copyReport").textContent = "Copied — paste into mail";
 };
-document.getElementById("mailto").onclick = () => {
+document.getElementById("mailto").onclick = async () => {
+  // Full report in mailto: body blows past OS/Thunderbird URL limits on Linux
+  // and can open a broken messengerWindow showing raw XHTML. Copy full text;
+  // open compose with a short stub only.
+  const full = state.report || "";
+  try {
+    await navigator.clipboard.writeText(full);
+  } catch (e) { /* paste still possible from the on-page letter */ }
   const sub = encodeURIComponent("Public Voice report — request for on-record explanation");
-  const body = encodeURIComponent(state.report || "");
-  location.href = "mailto:?subject=" + sub + "&body=" + body;
+  const stub = encodeURIComponent(
+    "Paste the Public Voice formal report here (already copied to your clipboard).\n\n" +
+    "—\nDraft · not lodged · Primary sources only · Seal is on the Public Voice page.\n"
+  );
+  const href = "mailto:?subject=" + sub + "&body=" + stub;
+  // Prefer window.open; location.href can leave a hung handler dialog on some Linux setups
+  const w = window.open(href, "_blank");
+  if (!w) location.href = href;
+  document.getElementById("mailto").textContent = "Mail opened — Ctrl+V to paste";
 };
 document.getElementById("dlPack").onclick = async () => {
   const pack = await buildPack();
