@@ -1,0 +1,167 @@
+{
+  "schema": "public-voice-pack/v1",
+  "product": "MUZZ Public Voice",
+  "id": "auto-nsw-hansard-2026-11-11",
+  "demo": false,
+  "title": "NSW Hansard on the public record \u00b7 2026-11-11",
+  "country": "AU",
+  "door": "elected",
+  "subjects": [
+    {
+      "role": "NSW Parliament (public record)",
+      "org": "Parliament of New South Wales",
+      "public_office": "https://www.parliament.nsw.gov.au/hansard/Pages/Hansard-API.aspx",
+      "public_id": "nsw-hansard"
+    }
+  ],
+  "claims": [
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Visitors",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171381",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Tribute to Jan Clifford",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171382",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Electricity Supply Amendment (Renewable Fuel Scheme) Bill 2026",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171383",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 E-bike Regulation",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171384",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 School Student Screen Use",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171388",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Plastic Reduction Legislation",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171389",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 School Infrastructure",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171390",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Plastic Reduction Legislation",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171391",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 State Economy",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171392",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 Payroll Tax",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/fragment/HANSARD-1323879322-171393",
+      "at": "2026-11-11",
+      "kind": "hansard",
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-171613",
+      "counter_at": "2026-11-11",
+      "screenshot_hash": null
+    }
+  ],
+  "silence": [],
+  "auth": {
+    "status": "matches_source",
+    "spotlight": "Official NSW Hansard TOC for 2026-11-11 is on the public API \u2014 topics below are primary-source fragments for the people to check against press lines.",
+    "method": "ai_assisted_primary",
+    "explain_ask": "Where a ministerial or agency public line touches these topics, point to the matching Hansard fragment \u2014 or correct the public line."
+  },
+  "harm": {
+    "summary": "Without a machine-speed public index, official lines can drift from the record while people wait.",
+    "time": "",
+    "money": "",
+    "stopped": ""
+  },
+  "send_status": "not_applicable",
+  "limits": [
+    "Lawful sweep of public NSW Hansard API only.",
+    "Not legal advice. Not a guilt finding. Anonymous operators.",
+    "AI/assist structured this pack; primary URLs are the source.",
+    "We do not lodge. No doxx. No classified material."
+  ],
+  "seal": {
+    "kind": "unsigned_export",
+    "name": "Anonymous",
+    "anonymous": true,
+    "at": "2026-11-15T07:28:21Z",
+    "clock_source": "device",
+    "approver_pub": null,
+    "approval_sig": null,
+    "snapshot_hash": null,
+    "entry_hash": null,
+    "reason": "Lawful auto-harvest of public parliamentary record"
+  },
+  "content_hash": "f68703e93dc2e47a14bf811e6889afebeb080b7fe6256489d1690e0cfc2020a2",
+  "moderation": {
+    "auto_checks": [
+      {
+        "id": "has_source_url",
+        "ok": true,
+        "detail": "primary http(s) URL"
+      },
+      {
+        "id": "no_private_contact",
+        "ok": true,
+        "detail": "ok"
+      },
+      {
+        "id": "not_classified_drop",
+        "ok": true,
+        "detail": "public Hansard/API only"
+      },
+      {
+        "id": "no_auto_lodge",
+        "ok": true,
+        "detail": "sweep never lodges"
+      }
+    ],
+    "publish_ready": true
+  }
+}

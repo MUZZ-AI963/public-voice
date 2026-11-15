@@ -1,5 +1,5 @@
 /* Public Voice — offline shell for every laptop. Cache-first static; network for fresh packs when online. */
-const CACHE = "public-voice-v4";
+const CACHE = "public-voice-v5";
 const PRECACHE = [
   "./",
   "./index.html",

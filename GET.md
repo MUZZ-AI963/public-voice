@@ -24,7 +24,10 @@ Cursor will (and will contact no one else):
 3. Enable Pages.  
 4. Live URL target: **https://muzz-ai963.github.io/public-voice/**
 
-Until then: local prove at `http://127.0.0.1:8765/` and the zip in this folder.
+**Live (15 Nov 2026):** https://muzz-ai963.github.io/public-voice/  
+Repo: https://github.com/MUZZ-AI963/public-voice  
+
+Local prove still: `http://127.0.0.1:8765/` and the zip in this folder. Updates: edit here → say push.
 
 ## Operator face
 

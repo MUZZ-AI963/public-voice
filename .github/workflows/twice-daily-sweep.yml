@@ -1,0 +1,38 @@
+name: Lawful twice-daily sweep
+
+on:
+  schedule:
+    # ~08:00 and ~20:00 Australia/Brisbane (AEST UTC+10)
+    - cron: "0 22 * * *"
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run lawful sweep
+        run: python3 sweep/lawful_sweep.py
+
+      - name: Commit and push ledger updates
+        run: |
+          git config user.name "Public Voice lawful sweep"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packs sweep/reports
+          if git diff --staged --quiet; then
+            echo "No ledger changes"
+            exit 0
+          fi
+          git commit -m "Lawful sweep: public Hansard harvest + feed health (no lodge, no contact)"
+          git push
