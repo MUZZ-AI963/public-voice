@@ -1,8 +1,9 @@
 /* Public Voice — offline shell for every laptop. Cache-first static; network for fresh packs when online. */
-const CACHE = "public-voice-v6";
+const CACHE = "public-voice-v7";
 const PRECACHE = [
   "./",
   "./index.html",
+  "./desk.html",
   "./gallery.html",
   "./onboarding.html",
   "./security.html",

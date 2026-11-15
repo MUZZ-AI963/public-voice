@@ -7,104 +7,61 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" href="./icon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#e3943a">
-<meta name="description" content="Free platform for people worldwide — sound out public statements on any laptop. Anonymous. Primary sources only.">
+<meta name="description" content="Paste a URL. Public Voice AI authenticates. Seal. Email the report.">
 <style>
   :root {
-    --bg: #12110e; --card: #1e1c18; --card-2: #26241f; --line: #3c3830;
-    --text: #f4f1ea; --muted: #a39e93; --faint: #7c776e; --orange: #e3943a;
-    --warn: #3a2412; --warn-line: #c47d32; --cream: #f6f3ec; --cream-text: #1c1914;
-    --input: #14130f; --ok: #c8d4b8; --bad: #e7b4a4;
+    --bg: #12110e; --card: #1e1c18; --line: #3c3830; --text: #f4f1ea;
+    --muted: #a39e93; --faint: #7c776e; --orange: #e3943a;
+    --warn: #3a2412; --warn-line: #c47d32; --input: #14130f;
+    --ok: #c8d4b8; --bad: #e7b4a4; --green: #39ff14; --green-ink: #06210a;
   }
   html[data-theme="light"] {
-    --bg: #f3efe6; --card: #fffdf8; --card-2: #f7f3ea; --line: #ddd4c4;
-    --text: #1c1914; --muted: #5e584e; --faint: #7a7368; --orange: #b86a12;
-    --warn: #fff4e6; --warn-line: #c47d32; --cream: #1c1914; --cream-text: #f6f3ec;
-    --input: #fff; --ok: #1d3b24; --bad: #7a2e22;
+    --bg: #f3efe6; --card: #fffdf8; --line: #ddd4c4; --text: #1c1914;
+    --muted: #5e584e; --faint: #7a7368; --orange: #b86a12;
+    --warn: #fff4e6; --warn-line: #c47d32; --input: #fff;
+    --ok: #1d3b24; --bad: #7a2e22; --green: #1faa3a; --green-ink: #06210a;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: var(--bg); color: var(--text); }
   body { font: 15px/1.45 "Segoe UI", Helvetica, Arial, sans-serif; min-height: 100vh; }
   button, input, select, textarea { font: inherit; color: inherit; }
   button { cursor: pointer; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 22px 22px 48px; }
-  header { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
-  h1 { font-family: Palatino, "Iowan Old Style", Georgia, serif; font-weight: 500; font-size: 42px; margin: 0; letter-spacing: -0.03em; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 22px 22px 48px; }
+  header { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+  h1 { font-family: Palatino, "Iowan Old Style", Georgia, serif; font-weight: 500; font-size: 36px; margin: 0; letter-spacing: -0.03em; }
   .kicker { margin: 8px 0 0; color: var(--muted); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
-  .free { margin: 10px 0 0; color: var(--muted); font-size: 13px; }
-  .tools { display: flex; gap: 8px; flex-wrap: wrap; }
+  .free { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
   .pill { background: transparent; border: 1px solid var(--line); color: var(--text); border-radius: 999px; padding: 8px 14px; text-decoration: none; display: inline-block; }
-  .pill:hover, .card:hover { border-color: var(--orange); }
-  #clear { background: #d8e8c8; border-color: #a8c48a; color: #1d3b24; }
-  .banner { margin-top: 18px; background: var(--cream); color: var(--cream-text); text-align: center; padding: 10px 12px; font-size: 14px; }
-  .warn { margin-top: 12px; border: 1px solid var(--warn-line); background: var(--warn); padding: 12px 14px; border-radius: 8px; }
-  .warn strong { display: block; margin-bottom: 4px; }
-  .howto { margin-top: 12px; border: 1px solid var(--line); background: var(--card); border-radius: 10px; padding: 14px 16px; }
-  .howto h2 { font-size: 22px; margin: 0 0 8px; font-family: Palatino, Georgia, serif; font-weight: 500; }
-  .howto p, .howto li { color: var(--muted); }
-  .howto ol { margin: 8px 0 0; padding-left: 1.2rem; color: var(--text); }
-  .layout { display: grid; grid-template-columns: 200px 1fr; gap: 28px; margin-top: 22px; }
-  nav { display: flex; flex-direction: column; gap: 4px; }
-  nav button {
-    display: flex; gap: 10px; align-items: center; text-align: left;
-    background: transparent; border: 0; color: var(--muted); padding: 7px 4px; border-radius: 8px;
-  }
-  nav button[aria-current="step"] { color: var(--text); }
-  .n {
-    width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center;
-    border: 1px solid var(--line); font-size: 12px; flex: 0 0 auto;
-  }
-  nav button[aria-current="step"] .n { background: var(--orange); color: #1a1208; border-color: var(--orange); }
-  h2 { font-family: Palatino, Georgia, serif; font-weight: 500; font-size: 28px; margin: 0 0 6px; }
-  .help { color: var(--muted); margin: 0 0 14px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-  .card {
-    text-align: left; background: var(--card); border: 1px solid var(--line);
-    border-radius: 10px; padding: 12px; min-height: 96px;
-  }
-  .card[aria-pressed="true"] { border-color: var(--orange); box-shadow: inset 0 0 0 1px var(--orange); }
-  .card strong { display: block; margin-bottom: 6px; }
-  .card span { color: var(--muted); font-size: 13px; }
-  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
-  label { display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 13px; }
+  .pill:hover { border-color: var(--orange); }
+  .primary { background: var(--orange); color: #1a1208; border: 0; border-radius: 999px; padding: 10px 18px; font-weight: 700; }
+  .primary:disabled { opacity: 0.5; cursor: wait; }
+  .banner { margin-top: 16px; background: #f6f3ec; color: #1c1914; text-align: center; padding: 10px 12px; font-size: 14px; }
+  html[data-theme="light"] .banner { background: #1c1914; color: #f6f3ec; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-top: 16px; }
+  h2 { font-family: Palatino, Georgia, serif; font-weight: 500; font-size: 22px; margin: 0 0 8px; }
+  .help { color: var(--muted); margin: 0 0 12px; }
+  label { display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 13px; margin-top: 10px; }
   input, select, textarea {
     background: var(--input); border: 1px solid var(--line); border-radius: 8px;
-    padding: 10px 12px; color: var(--text);
+    padding: 10px 12px; color: var(--text); width: 100%;
   }
   textarea { min-height: 88px; resize: vertical; }
-  .span2 { grid-column: 1 / -1; }
-  .row { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin: 6px 0; }
-  .row .tag { color: var(--orange); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
-  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-  .primary { background: var(--orange); color: #1a1208; border: 0; border-radius: 999px; padding: 8px 14px; font-weight: 600; }
-  .draft-banner {
-    display: inline-block; margin: 0 0 10px; padding: 4px 10px; border-radius: 999px;
-    background: var(--warn); border: 1px solid var(--warn-line); font-size: 12px; font-weight: 600;
+  .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; align-items: center; }
+  .status { margin-top: 12px; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); }
+  .status.ok { color: var(--ok); border-color: var(--ok); }
+  .status.bad { color: var(--bad); border-color: var(--bad); }
+  .auth-box { border-left: 4px solid var(--orange); background: var(--warn); padding: 12px 14px; border-radius: 0 8px 8px 0; margin-top: 12px; }
+  .letter {
+    white-space: pre-wrap; background: var(--input); border: 1px solid var(--line);
+    border-radius: 8px; padding: 12px; font-family: ui-monospace, monospace; font-size: 12.5px;
+    max-height: 320px; overflow: auto; margin-top: 10px;
   }
-  .channel { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 10px 0; }
-  .channel h3 { margin: 0 0 4px; font-size: 17px; }
-  .channel .when { color: var(--muted); font-size: 13px; }
-  .paste-mini {
-    margin-top: 8px; white-space: pre-wrap; background: var(--input); border: 1px solid var(--line);
-    border-radius: 8px; padding: 10px; font-family: ui-monospace, monospace; font-size: 12px;
-    max-height: 160px; overflow: auto;
-  }
-  .auth-box { border-left: 4px solid var(--orange); background: var(--warn); padding: 12px 14px; border-radius: 0 8px 8px 0; margin: 12px 0; }
-  .check { margin: 6px 0; }
-  .ok { color: var(--ok); }
-  .bad { color: var(--bad); }
-  .note { color: var(--muted); font-size: 14px; }
+  .tag { display: inline-block; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange); margin-right: 8px; }
   code { font-family: ui-monospace, monospace; font-size: 12px; word-break: break-all; }
   a { color: var(--orange); }
-  .limits { margin-top: 18px; border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 8px 12px; font-size: 13px; }
-  .limits summary { cursor: pointer; font-weight: 600; list-style: none; color: var(--muted); }
-  .limits ul { margin: 8px 0 0; padding-left: 1.1rem; color: var(--muted); }
   .foot { margin-top: 28px; color: var(--faint); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
-  :focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
-  @media (max-width: 800px) {
-    .layout, .grid, .fields { grid-template-columns: 1fr; }
-    h1 { font-size: 32px; }
-    nav { flex-direction: row; overflow-x: auto; }
-  }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+  .check { font-size: 13px; margin: 4px 0; }
 </style>
 </head>
 <body>
@@ -112,217 +69,128 @@
   <header>
     <div>
       <h1>Public Voice</h1>
-      <p class="kicker">Your right to challenge · Free for people · Sound it out · Put it on their desk</p>
-      <p class="free">Every laptop · Anonymous if you choose · No account · Operators unnamed on this face</p>
+      <p class="kicker">Your right to challenge · Paste a URL · Seal · Email</p>
+      <p class="free">Short path. Seal always kept. Anonymous. Nothing leaves this browser until you copy.</p>
     </div>
     <div class="tools">
-      <a class="pill" href="./gallery.html">Ledger gallery</a>
-      <a class="pill" href="./onboarding.html">Every laptop</a>
-      <a class="pill" href="./security.html" style="background:#39ff14;color:#06210a;border-color:#39ff14;font-weight:700">Security pack</a>
-      <a class="pill" href="./ai-forward.html" style="background:#b8f55a;color:#06210a;border-color:#b8f55a;font-weight:700">AI forward</a>
+      <a class="pill" href="./gallery.html">Ledger</a>
+      <a class="pill" href="./desk.html">Full desk</a>
+      <a class="pill" href="./security.html" style="background:var(--green);color:var(--green-ink);border-color:var(--green);font-weight:700">Security</a>
       <button class="pill" id="theme" type="button">Theme</button>
-      <button class="pill" id="clear" type="button">Clear everything</button>
+      <button class="pill" id="clear" type="button">Clear</button>
     </div>
   </header>
-  <div class="banner">Works on any laptop with a browser. Nothing you type leaves your browser. This page lodges nothing. AI assists against primary sources only.</div>
-  <div class="warn">
-    <strong>Your right to sound it out — anonymously.</strong>
-    When a government or agency publication does not stack with past public information, you authenticate it here and put an explain-ask on their desk.
-    Primary sources only. No private home or phone. No classified material. Not legal advice.
-  </div>
-  <section class="howto">
-    <h2>How and why</h2>
-    <p><strong>Why:</strong> People are entitled to be lawfully informed from public records. Institutions hold the microphone; people hold the loss and the silence. This free desk turns a public claim into a checkable pack and puts it on the subject’s desk to explain — you can stay Anonymous.</p>
-    <p><strong>How:</strong></p>
-    <ol>
-      <li>Name the concern and the public door.</li>
-      <li>Paste the claim with its primary-source URL.</li>
-      <li>Set the silence clock or the counter-source.</li>
-      <li>Write the people’s cost. Authenticate against the sources (AI assist later; sources still required).</li>
-      <li>Copy the Send pack (Draft · not lodged). Seal as Anonymous if you want. Export when the checklist passes.</li>
-    </ol>
+  <div class="banner">Public Voice AI authenticates against primary sources — not rumour. Structural status, not a court finding. Draft · not lodged.</div>
+
+  <section class="card">
+    <h2>1 · What to challenge</h2>
+    <p class="help">Paste the public URL (statement, media, portal, Hansard). Optional: paste the exact quote if the page won’t load in-browser.</p>
+    <label>Source URL (required)
+      <input id="url" type="url" placeholder="https://…">
+    </label>
+    <label>Statement / quote (optional — paste if fetch is blocked)
+      <textarea id="quote" placeholder="The exact public words you are sounding out"></textarea>
+    </label>
+    <label>Counter / check URL (optional — later fact, project page, correction)
+      <input id="counter" type="url" placeholder="https://…">
+    </label>
+    <label>Country
+      <select id="country">
+        <option value="AU">Australia</option>
+        <option value="NZ">New Zealand</option>
+        <option value="UK">United Kingdom</option>
+        <option value="US">United States</option>
+        <option value="EU">European Union</option>
+        <option value="OTHER">Other</option>
+      </select>
+    </label>
+    <label style="flex-direction:row;align-items:center;gap:10px;margin-top:12px">
+      <input id="anonymous" type="checkbox" checked style="width:auto"> Sound out anonymously
+    </label>
+    <div class="row">
+      <button class="primary" id="run" type="button">Authenticate with Public Voice AI</button>
+    </div>
+    <div id="runStatus" class="status" hidden></div>
   </section>
-  <div class="layout">
-    <nav aria-label="Steps">
-      <button type="button" data-step="concern"><span class="n">1</span>Concern</button>
-      <button type="button" data-step="sources"><span class="n">2</span>Sources</button>
-      <button type="button" data-step="silence"><span class="n">3</span>Silence clock</button>
-      <button type="button" data-step="cost"><span class="n">4</span>People's cost</button>
-      <button type="button" data-step="auth"><span class="n">5</span>Authenticate</button>
-      <button type="button" data-step="send"><span class="n">6</span>Send pack</button>
-      <button type="button" data-step="seal"><span class="n">7</span>Seal</button>
-      <button type="button" data-step="export"><span class="n">8</span>Export / publish</button>
-    </nav>
-    <main id="main"></main>
-  </div>
-  <details class="limits">
-    <summary>Limits</summary>
-    <ul>
-      <li>Not legal advice. Not a tip-line lodger. Not a classified dropbox.</li>
-      <li>Nothing typed here leaves your browser.</li>
-      <li>Auth status is structural against sources — not a finding of “corrupt.”</li>
-      <li>A seal is this device’s clock only.</li>
-      <li>See <a href="./LIMITS.md">LIMITS.md</a>.</li>
-    </ul>
-  </details>
-  <p class="foot">Free platform for people · Anonymous sound-out · Saved in this browser only · General information, not legal advice · See LICENSE</p>
+
+  <section class="card" id="result" hidden>
+    <h2>2 · Authentication</h2>
+    <p><span class="tag" id="authTag">—</span> <span id="authMethod" class="help" style="display:inline"></span></p>
+    <div class="auth-box">
+      <strong>Spotlight</strong>
+      <p id="spotlight" style="margin:6px 0 0"></p>
+    </div>
+    <p class="help" id="explainAsk" style="margin-top:10px"></p>
+    <div id="checks"></div>
+  </section>
+
+  <section class="card" id="reportCard" hidden>
+    <h2>3 · Formal report · ready to email</h2>
+    <p class="help">Draft · not lodged. You copy; you send. This page lodges nothing.</p>
+    <div class="letter" id="report"></div>
+    <div class="row">
+      <button class="primary" id="copyReport" type="button">Copy report for email</button>
+      <button class="pill" id="mailto" type="button">Open mail draft</button>
+    </div>
+  </section>
+
+  <section class="card" id="sealCard" hidden>
+    <h2>4 · Seal (always)</h2>
+    <p class="help">Ed25519 seal on this device. Proves these bytes were signed — not that a court agrees. Device clock only.</p>
+    <p id="sealStatus" class="status">Not sealed yet.</p>
+    <p><code id="sealHead"></code></p>
+    <div class="row">
+      <button class="primary" id="doSeal" type="button">Seal this report</button>
+      <button class="pill" id="dlPack" type="button">Download sealed pack</button>
+    </div>
+  </section>
+
+  <p class="foot">Public Voice · Your right to challenge · Free for people · Primary sources only · See LICENSE · <a href="./desk.html">Full desk</a></p>
 </div>
 <script>
-const STORE = "muzz-public-voice-v1";
+const STORE = "muzz-public-voice-quick-v1";
 const GENESIS = "0".repeat(64);
-const STEPS = ["concern", "sources", "silence", "cost", "auth", "send", "seal", "export"];
-function stepNav() {
-  const i = STEPS.indexOf(state.step);
-  const prev = i > 0;
-  const next = i >= 0 && i < STEPS.length - 1;
-  return `<div class="actions no-print" style="margin-top:22px;justify-content:space-between;align-items:center">
-    ${prev ? `<button type="button" class="pill" id="goPrev">← Back</button>` : `<span></span>`}
-    ${next ? `<button type="button" class="primary" id="goNext">Next →</button>` : `<span class="note">Last step</span>`}
-  </div>`;
-}
-function goStep(delta) {
-  read();
-  const i = STEPS.indexOf(state.step);
-  const j = i + delta;
-  if (j < 0 || j >= STEPS.length) return;
-  state.step = STEPS[j];
-  save();
-  render();
-}
-const DOORS = [
-  ["elected", "Elected official", "No reply past SLA, or claim A then fact B."],
-  ["agency", "Agency", "FOI ignored, under review forever, redirect loops."],
-  ["defence_dva", "Defence / DVA", "Public claim or status silence (public face only)."],
-  ["clearance_contractor", "Clearance / contractor", "Sponsor or portal silence on process."],
-  ["intelligence_public", "Intelligence · public channel", "Public statement vs later official correction only."],
-  ["official_disinfo", "Official press line", "Press line that collapses under primary source."],
-  ["foi_pid", "FOI / PID desk", "Process clock and refusal text."],
-  ["care_record", "Care record chase", "Record needed for care; silence or redirect."],
-  ["other", "Other public door", "Still needs primary sources."]
-];
-const AUTH_STATUSES = [
-  ["awaiting_sources", "Awaiting sources"],
-  ["matches_source", "Matches source"],
-  ["contradicted_by_source", "Contradicted by primary source"],
-  ["no_event_found", "No event found on the record"],
-  ["silence_past_clock", "Silence past clock"],
-  ["rehash_unanchored", "Rehash · never transpired on primary record"],
-  ["correction_lodged", "Correction lodged (sourced)"]
-];
-const PLACES = {
-  AU: {
-    name: "Australia",
-    clock: "Commonwealth FOI: ordinarily 30 days from request (extensions exist). Confirm on the live OAIC FOI page. A 14-day ask in a letter is your deadline, not a statute.",
-    channels: [
-      { id: "subject", title: "1 · Public office / agency (spotlight ask)", when: "Always first when you want an on-record explanation.", open: null, paste: "subject" },
-      { id: "foi", title: "2 · FOI (admin / process records)", when: "Non-exempt admin process only. Not classified material.", open: "https://www.oaic.gov.au/freedom-of-information/your-foi-rights/make-an-foi-request", paste: "foi" },
-      { id: "ombudsman", title: "3 · Commonwealth Ombudsman", when: "After agency silence, refusal, or redirect loop.", open: "https://www.ombudsman.gov.au/complaints", paste: "ombudsman" }
-    ]
-  },
-  NZ: {
-    name: "New Zealand",
-    clock: "Use Ombudsman OIA guidance for timeframes. Do not invent a day count.",
-    channels: [
-      { id: "subject", title: "1 · Agency / office", when: "First.", open: null, paste: "subject" },
-      { id: "foi", title: "2 · OIA request", when: "Official information the agency holds.", open: "https://www.ombudsman.parliament.nz/what-ombudsman-can-help/official-information-requests", paste: "foi" },
-      { id: "ombudsman", title: "3 · Ombudsman", when: "After the agency step.", open: "https://www.ombudsman.parliament.nz/", paste: "ombudsman" }
-    ]
-  },
-  UK: {
-    name: "United Kingdom",
-    clock: "ICO: public authorities usually 20 working days for FOI. Confirm live.",
-    channels: [
-      { id: "subject", title: "1 · Public authority", when: "First.", open: null, paste: "subject" },
-      { id: "foi", title: "2 · FOI", when: "Recorded information.", open: "https://ico.org.uk/for-the-public/official-information/", paste: "foi" },
-      { id: "ombudsman", title: "3 · Ombudsman / MP route", when: "As their pages require.", open: "https://www.ombudsman.org.uk/", paste: "ombudsman" }
-    ]
-  },
-  US: {
-    name: "United States",
-    clock: "Use FOIA.gov and the agency page. Do not invent a single federal day count here.",
-    channels: [
-      { id: "subject", title: "1 · Agency / office", when: "First.", open: null, paste: "subject" },
-      { id: "foi", title: "2 · FOIA", when: "Via FOIA.gov or agency portal.", open: "https://www.foia.gov/", paste: "foi" },
-      { id: "ombudsman", title: "3 · OGIS / liaison", when: "Process help.", open: "https://www.archives.gov/ogis", paste: "ombudsman" }
-    ]
-  }
+const AUTH_LABEL = {
+  matches_source: "Matches source",
+  contradicted_by_source: "Contradicted by primary source",
+  no_event_found: "No event found on the record",
+  silence_past_clock: "Silence past clock",
+  rehash_unanchored: "Rehash · unanchored",
+  awaiting_sources: "Awaiting sources",
+  correction_lodged: "Correction lodged"
 };
 
 const blank = () => ({
-  step: "concern",
-  door: "",
-  title: "",
-  country: "AU",
-  yourName: "Anonymous",
-  anonymous: true,
-  role: "",
-  org: "",
-  publicOffice: "",
-  claims: [],
-  silence: [],
-  costTime: "",
-  costMoney: "",
-  costStopped: "",
-  harmSummary: "",
-  authStatus: "awaiting_sources",
-  spotlight: "",
-  explainAsk: "",
-  sentOn: "",
-  log: [],
-  key: null
+  url: "", quote: "", counter: "", country: "AU", anonymous: true,
+  fetched: "", counterFetched: "",
+  authStatus: "awaiting_sources", spotlight: "", explainAsk: "",
+  title: "", org: "", report: "",
+  log: [], key: null, content_hash: ""
 });
-
 let state = load();
 function load() {
-  try {
-    const raw = localStorage.getItem(STORE);
-    if (!raw) return blank();
-    return Object.assign(blank(), JSON.parse(raw));
-  } catch (e) { return blank(); }
+  try { return Object.assign(blank(), JSON.parse(localStorage.getItem(STORE) || "{}")); }
+  catch (e) { return blank(); }
 }
-function save() {
-  localStorage.setItem(STORE, JSON.stringify(Object.assign({}, state)));
-}
+function save() { localStorage.setItem(STORE, JSON.stringify(state)); }
 
+const savedTheme = localStorage.getItem("muzz-public-voice-theme");
+if (savedTheme) document.documentElement.dataset.theme = savedTheme;
 document.getElementById("theme").onclick = () => {
   const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
   document.documentElement.dataset.theme = next;
   localStorage.setItem("muzz-public-voice-theme", next);
 };
 document.getElementById("clear").onclick = () => {
-  if (!confirm("Clear this draft from this browser?")) return;
+  if (!confirm("Clear this quick challenge?")) return;
   localStorage.removeItem(STORE);
   state = blank();
-  render();
+  fillForm();
+  hideResults();
 };
-const savedTheme = localStorage.getItem("muzz-public-voice-theme");
-if (savedTheme) document.documentElement.dataset.theme = savedTheme;
-document.querySelectorAll("nav button").forEach((btn) => {
-  btn.onclick = () => { state.step = btn.dataset.step; save(); render(); };
-});
 
 function esc(s) {
   return String(s || "").replace(/[&<>]/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;" }[c]));
-}
-function escAttr(s) { return esc(s).replace(/"/g, "&quot;"); }
-function field(label, id, value, type) {
-  const input = type === "area"
-    ? `<textarea id="${id}">${esc(value)}</textarea>`
-    : type === "select"
-    ? value
-    : `<input id="${id}" ${type === "date" ? 'type="date"' : type === "url" ? 'type="url"' : ""} value="${escAttr(value)}">`;
-  return `<label class="${type === "area" ? "span2" : ""}">${label}${input}</label>`;
-}
-function read() {
-  const take = (id) => { const el = document.getElementById(id); return el ? el.value : null; };
-  ["title","country","yourName","role","org","publicOffice","costTime","costMoney","costStopped","harmSummary","authStatus","spotlight","explainAsk","sentOn"].forEach((id) => {
-    const v = take(id); if (v !== null) state[id] = typeof v === "string" ? v.trim() : v;
-  });
-  const anon = document.getElementById("anonymous");
-  if (anon) {
-    state.anonymous = !!anon.checked;
-    if (state.anonymous) state.yourName = "Anonymous";
-  }
 }
 function jsString(s) {
   let out = '"';
@@ -357,361 +225,376 @@ function fromHex(h) {
   for (let i = 0; i < out.length; i++) out[i] = parseInt(h.slice(i * 2, i * 2 + 2), 16);
   return out;
 }
-function looksPrivateContact(s) {
-  const t = String(s || "").toLowerCase();
-  if (!t) return false;
-  if (/home\s*(address|phone)|personal\s*(mobile|phone|email)|private\s*(residence|number)/.test(t)) return true;
-  if (/\b\+?\d[\d\s().-]{8,}\b/.test(t) && !/gov\.|parliament|ombudsman|foi/.test(t)) return true;
-  return false;
+
+function fillForm() {
+  document.getElementById("url").value = state.url || "";
+  document.getElementById("quote").value = state.quote || "";
+  document.getElementById("counter").value = state.counter || "";
+  document.getElementById("country").value = state.country || "AU";
+  document.getElementById("anonymous").checked = state.anonymous !== false;
 }
+function readForm() {
+  state.url = document.getElementById("url").value.trim();
+  state.quote = document.getElementById("quote").value.trim();
+  state.counter = document.getElementById("counter").value.trim();
+  state.country = document.getElementById("country").value;
+  state.anonymous = document.getElementById("anonymous").checked;
+  save();
+}
+function hideResults() {
+  ["result", "reportCard", "sealCard"].forEach((id) => document.getElementById(id).hidden = true);
+  document.getElementById("runStatus").hidden = true;
+}
+function setRunStatus(msg, cls) {
+  const el = document.getElementById("runStatus");
+  el.hidden = false;
+  el.className = "status " + (cls || "");
+  el.textContent = msg;
+}
+
+/** Public Voice AI — browser loop: fetch readable text, structure auth, draft report. */
+async function fetchReadable(url) {
+  if (!url || !/^https?:\/\//i.test(url)) throw new Error("Need an http(s) URL");
+  const controllers = [
+    "https://r.jina.ai/" + url,
+    "https://api.allorigins.win/raw?url=" + encodeURIComponent(url)
+  ];
+  let last = null;
+  for (const endpoint of controllers) {
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 25000);
+      const res = await fetch(endpoint, { signal: ctrl.signal });
+      clearTimeout(t);
+      if (!res.ok) { last = "HTTP " + res.status; continue; }
+      const text = await res.text();
+      if (text && text.length > 40) return text.slice(0, 120000);
+      last = "empty body";
+    } catch (err) {
+      last = String(err.message || err);
+    }
+  }
+  throw new Error("Could not fetch page in-browser (" + last + "). Paste the quote and run again.");
+}
+
+function extractTitle(text, url) {
+  const m = text.match(/^Title:\s*(.+)$/mi) || text.match(/^#\s+(.+)$/m);
+  if (m) return m[1].trim().slice(0, 160);
+  try { return new URL(url).hostname; } catch (e) { return "Public statement"; }
+}
+function extractOrg(text, url) {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, "");
+    return host;
+  } catch (e) { return "Public office / publisher"; }
+}
+function pickQuote(userQuote, fetched) {
+  if (userQuote && userQuote.length >= 8) return userQuote.slice(0, 1200);
+  const lines = String(fetched || "").split(/\n/).map((l) => l.trim()).filter((l) => l.length > 40 && l.length < 280);
+  const scored = lines.filter((l) => /said|announc|confirm|will |deliver|under review|completed|budget|today/i.test(l));
+  return (scored[0] || lines[0] || "Public statement at the source URL — see primary source.").slice(0, 1200);
+}
+function overlapScore(a, b) {
+  const tok = (s) => new Set(String(s).toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter((w) => w.length > 3));
+  const A = tok(a), B = tok(b);
+  if (!A.size || !B.size) return 0;
+  let n = 0;
+  A.forEach((w) => { if (B.has(w)) n++; });
+  return n / Math.min(A.size, B.size);
+}
+function authenticate(quote, sourceText, counterText, hasCounter) {
+  const src = (sourceText || "") + "\n" + quote;
+  const underReview = /under review|being considered|no further comment|cannot comment/i.test(src);
+  const delivered = /deliver(ed|y)|on time|under budget|completed|mission accomplished/i.test(quote);
+  const counterDenies = hasCounter && /planning|not yet|delayed|cancelled|proposed|draft|no evidence|incorrect|clarify|correction/i.test(counterText || "");
+  const overlap = hasCounter ? overlapScore(quote, counterText) : 0;
+
+  if (hasCounter && (counterDenies || overlap < 0.12)) {
+    return {
+      status: counterDenies ? "contradicted_by_source" : "rehash_unanchored",
+      spotlight: counterDenies
+        ? "The public statement does not stack with the counter primary source (correction, planning status, or denial language on the record)."
+        : "Little overlap between the claim and the counter primary source — possible rehash with no matching event on that page.",
+      explainAsk: "Please point to the primary record that matches your public statement — or correct the public line."
+    };
+  }
+  if (delivered && underReview) {
+    return {
+      status: "rehash_unanchored",
+      spotlight: "Delivery / completion language appears alongside ongoing ‘under review’ process language — check whether the event transpired on the public record.",
+      explainAsk: "Publish the completion notice or budget outturn that matches the claim, or amend the claim."
+    };
+  }
+  if (hasCounter && overlap >= 0.35) {
+    return {
+      status: "matches_source",
+      spotlight: "Claim and counter/check source share substantial primary-source language — no structural contradiction flagged in this pass.",
+      explainAsk: "If a later official correction appears, lodge it as a sourced reply on the ledger."
+    };
+  }
+  if (!hasCounter) {
+    return {
+      status: "awaiting_sources",
+      spotlight: "Primary source captured. No counter URL yet — add one (project page, Hansard, correction) to deepen authentication.",
+      explainAsk: "Please confirm the claim against the full public record, or provide the counter source URL."
+    };
+  }
+  return {
+    status: "matches_source",
+    spotlight: "Sources captured. No strong structural mismatch in this automated pass — readers should still check the URLs.",
+    explainAsk: "Confirm on the public record or supply a sourced correction."
+  };
+}
+
+function buildReport(auth) {
+  const who = state.anonymous !== false ? "Anonymous" : "A member of the public";
+  const today = new Date().toISOString().slice(0, 10);
+  const quote = state.quote || "(see primary source URL)";
+  return (
+`PUBLIC VOICE · FORMAL REPORT — DRAFT · NOT LODGED
+Your right to challenge · Free platform for people
+Prepared: ${today} (this device's clock)
+Holder: ${who}
+Country: ${state.country}
+
+=== AUTHENTICATION (structural — not a legal finding) ===
+Status: ${AUTH_LABEL[auth.status] || auth.status}
+Method: Public Voice AI (browser assist against primary sources)
+Spotlight: ${auth.spotlight}
+Explain ask: ${auth.explainAsk}
+
+=== PRIMARY SOURCE ===
+URL: ${state.url}
+Statement / quote:
+${quote}
+
+=== COUNTER / CHECK ===
+${state.counter ? "URL: " + state.counter : "(none provided in this pass)"}
+
+=== REQUEST ===
+I request an on-record explanation that stacks with the primary sources above, or a public correction if the line does not.
+
+Please reply within 14 days of receiving this. That 14 days is the reply I am asking for; it is not stated here as a statutory period.
+
+=== LIMITS ===
+General information, not legal advice. Public Voice does not lodge.
+Primary sources only. AI assists; AI is not itself a publishable source of “not true.”
+No private home/phone. No classified material. Anonymous sound-out allowed.
+Seal (when applied) is this device's clock only.
+`
+  );
+}
+
+function showResults(auth) {
+  document.getElementById("result").hidden = false;
+  document.getElementById("reportCard").hidden = false;
+  document.getElementById("sealCard").hidden = false;
+  document.getElementById("authTag").textContent = AUTH_LABEL[auth.status] || auth.status;
+  document.getElementById("authMethod").textContent = "Public Voice AI · primary-source assist";
+  document.getElementById("spotlight").textContent = auth.spotlight;
+  document.getElementById("explainAsk").textContent = "Explain ask: " + auth.explainAsk;
+  document.getElementById("checks").innerHTML = [
+    ["source_url", !!state.url],
+    ["quote_or_fetch", !!(state.quote || state.fetched)],
+    ["no_lodge", true],
+    ["seal_ready", true]
+  ].map(([id, ok]) => `<div class="check ${ok ? "ok" : "bad"}">${ok ? "✓" : "✗"} ${id}</div>`).join("");
+  state.report = buildReport(auth);
+  document.getElementById("report").textContent = state.report;
+  updateSealUI();
+  save();
+}
+
+async function runAI() {
+  readForm();
+  if (!state.url || !/^https?:\/\//i.test(state.url)) {
+    setRunStatus("Enter a public http(s) URL.", "bad");
+    return;
+  }
+  const btn = document.getElementById("run");
+  btn.disabled = true;
+  setRunStatus("Public Voice AI running — fetching primary source…", "");
+  state.fetched = "";
+  state.counterFetched = "";
+  try {
+    try {
+      state.fetched = await fetchReadable(state.url);
+      setRunStatus("Source fetched. Analysing…", "ok");
+    } catch (err) {
+      if (!state.quote || state.quote.length < 8) {
+        setRunStatus(String(err.message || err) + " — paste the quote to continue.", "bad");
+        btn.disabled = false;
+        return;
+      }
+      setRunStatus("Fetch blocked — using your pasted quote.", "");
+    }
+    if (state.counter) {
+      try {
+        state.counterFetched = await fetchReadable(state.counter);
+      } catch (e) {
+        state.counterFetched = "";
+      }
+    }
+    const quote = pickQuote(state.quote, state.fetched);
+    state.quote = quote;
+    state.title = extractTitle(state.fetched || quote, state.url);
+    state.org = extractOrg(state.fetched || "", state.url);
+    const auth = authenticate(quote, state.fetched, state.counterFetched, !!state.counter);
+    state.authStatus = auth.status;
+    state.spotlight = auth.spotlight;
+    state.explainAsk = auth.explainAsk;
+    // New content invalidates prior seal
+    state.log = [];
+    showResults(auth);
+    setRunStatus("Authentication complete. Seal the report, then copy for email.", "ok");
+    document.getElementById("quote").value = state.quote;
+  } catch (err) {
+    setRunStatus(String(err.message || err), "bad");
+  } finally {
+    btn.disabled = false;
+    save();
+  }
+}
+
 function snapshot() {
   return {
     authStatus: state.authStatus,
-    claims: state.claims,
-    costMoney: state.costMoney,
-    costStopped: state.costStopped,
-    costTime: state.costTime,
+    counter: state.counter,
     country: state.country,
-    door: state.door,
     explainAsk: state.explainAsk,
-    harmSummary: state.harmSummary,
-    org: state.org,
-    publicOffice: state.publicOffice,
-    role: state.role,
-    silence: state.silence,
+    quote: state.quote,
+    report: state.report,
     spotlight: state.spotlight,
     title: state.title,
-    yourName: state.yourName
+    url: state.url
   };
 }
+
 async function verifyLog(log) {
   let prev = GENESIS;
   for (let i = 0; i < log.length; i++) {
     const entry = log[i];
     const body = Object.assign({}, entry);
     delete body.entry_hash;
-    if (body.prev_hash !== prev) return { ok: false, at: i, reason: "prev_hash" };
+    if (body.prev_hash !== prev) return { ok: false, reason: "prev_hash" };
     const hash = await sha256hex(prev + canonical(body));
-    if (hash !== entry.entry_hash) return { ok: false, at: i, reason: "entry_hash" };
-    if (entry.kind === "holder_seal" && entry.approval_sig && state.key) {
-      const material = canonical({ digest: entry.statement_digest, name: entry.name, reason: entry.reason, role: "holder" });
-      const publicKey = await crypto.subtle.importKey("raw", fromHex(state.key.pub), { name: "Ed25519" }, true, ["verify"]);
-      const ok = await crypto.subtle.verify({ name: "Ed25519" }, publicKey, fromHex(entry.approval_sig), new TextEncoder().encode(material));
-      if (!ok) return { ok: false, at: i, reason: "signature" };
-    }
+    if (hash !== entry.entry_hash) return { ok: false, reason: "entry_hash" };
     prev = entry.entry_hash;
   }
   return { ok: true, head: log.length ? log[log.length - 1].entry_hash : GENESIS };
 }
-function lastSeal() {
-  for (let i = state.log.length - 1; i >= 0; i--) if (state.log[i].kind === "holder_seal") return state.log[i];
-  return null;
-}
-async function changedSinceSeal() {
-  const seal = lastSeal();
-  if (!seal) return false;
-  return (await sha256hex(canonical(snapshot()))) !== seal.snapshot_hash;
-}
-function autoChecks() {
-  const checks = [];
-  const hasUrl = state.claims.some((c) => c.url && c.url.length >= 8 && /^https?:\/\//i.test(c.url));
-  checks.push({ id: "has_source_url", ok: hasUrl, detail: hasUrl ? "At least one http(s) claim URL" : "Add a primary-source URL on Sources" });
-  const privateHit = looksPrivateContact(state.publicOffice) || state.claims.some((c) => looksPrivateContact(c.text));
-  checks.push({ id: "no_private_contact", ok: !privateHit, detail: privateHit ? "Looks like private contact — public office only" : "No private-contact pattern flagged" });
-  const hasDoor = !!state.door;
-  checks.push({ id: "has_door", ok: hasDoor, detail: hasDoor ? state.door : "Pick a door on Concern" });
-  const hasAuth = state.authStatus && state.authStatus !== "awaiting_sources" && (state.spotlight || "").length >= 8;
-  checks.push({ id: "auth_row", ok: hasAuth, detail: hasAuth ? state.authStatus : "Set authentication status and spotlight" });
-  const needsCounter = ["contradicted_by_source", "no_event_found", "rehash_unanchored"].includes(state.authStatus);
-  const hasCounter = state.claims.some((c) => c.counter_url && c.counter_url.length >= 8);
-  checks.push({ id: "counter_when_needed", ok: !needsCounter || hasCounter, detail: needsCounter ? (hasCounter ? "Counter / check URL present" : "This auth status needs a counter-source URL") : "Counter not required for this status" });
-  const needsSilence = state.authStatus === "silence_past_clock";
-  const hasSilence = state.silence.length > 0;
-  checks.push({ id: "silence_when_needed", ok: !needsSilence || hasSilence, detail: needsSilence ? (hasSilence ? "Silence clock present" : "Add a silence clock") : "Silence clock not required for this status" });
-  const sealed = !!lastSeal();
-  checks.push({ id: "sealed", ok: sealed, detail: sealed ? "Holder seal present" : "Seal before publish export" });
-  return checks;
-}
 
-async function render() {
-  document.querySelectorAll("nav button").forEach((btn) => {
-    if (btn.dataset.step === state.step) btn.setAttribute("aria-current", "step");
-    else btn.removeAttribute("aria-current");
-  });
-  const main = document.getElementById("main");
-  const step = state.step;
-  if (step === "concern") main.innerHTML = viewConcern();
-  else if (step === "sources") main.innerHTML = viewSources();
-  else if (step === "silence") main.innerHTML = viewSilence();
-  else if (step === "cost") main.innerHTML = viewCost();
-  else if (step === "auth") main.innerHTML = viewAuth();
-  else if (step === "send") main.innerHTML = viewSend();
-  else if (step === "seal") main.innerHTML = await viewSeal();
-  else main.innerHTML = await viewExport();
-  bind();
-  save();
-}
-
-function viewConcern() {
-  const cards = DOORS.map(([id, title, blurb]) =>
-    `<button type="button" class="card" data-door="${id}" aria-pressed="${state.door === id}">
-      <strong>${esc(title)}</strong><span>${esc(blurb)}</span></button>`
-  ).join("");
-  const opts = Object.entries(PLACES).map(([id, p]) =>
-    `<option value="${id}" ${id === state.country ? "selected" : ""}>${esc(p.name)}</option>`
-  ).join("");
-  return `<h2>Concern</h2>
-    <p class="help">Which public door, and who holds the microphone. Public office contact only.</p>
-    <div class="grid">${cards}</div>
-    <div class="fields">
-      ${field("Short title for this pack", "title", state.title)}
-      <label>Country<select id="country">${opts}</select></label>
-      ${field("Subject role (public)", "role", state.role)}
-      ${field("Organisation / office", "org", state.org)}
-      ${field("Public office URL or published switchboard", "publicOffice", state.publicOffice, "url")}
-    </div>
-    ${stepNav()}`;
-}
-
-function viewSources() {
-  const rows = state.claims.map((c, i) =>
-    `<div class="row"><span class="tag">${esc(c.kind || "claim")}</span> ${esc(c.at)} · ${esc(c.text)}
-      <div class="note"><a href="${escAttr(c.url)}" target="_blank" rel="noopener noreferrer">${esc(c.url)}</a>
-      ${c.counter_url ? `<br>Counter: <a href="${escAttr(c.counter_url)}" target="_blank" rel="noopener noreferrer">${esc(c.counter_url)}</a> · ${esc(c.counter_at || "")}` : ""}</div>
-      <button type="button" class="pill" data-delc="${i}">Remove</button></div>`
-  ).join("") || "<p class='note'>No claims yet.</p>";
-  return `<h2>Sources</h2>
-    <p class="help">Every claim needs a primary-source URL (Hansard, official PDF, press transcript, FOI portal, agency page). Without a URL it cannot publish.</p>
-    <div class="list">${rows}</div>
-    <div class="fields">
-      ${field("Date of the statement", "cAt", "", "date")}
-      <label>Kind<select id="cKind">
-        <option value="public_statement">Public statement</option>
-        <option value="press_line">Press line</option>
-        <option value="hansard">Hansard</option>
-        <option value="foi_reply">FOI reply</option>
-        <option value="portal_status">Portal status</option>
-        <option value="correction">Correction</option>
-        <option value="other">Other</option>
-      </select></label>
-      ${field("What they said (quote)", "cText", "", "area")}
-      ${field("Primary source URL", "cUrl", "", "url")}
-      ${field("Counter / later-fact URL (if any)", "cCounter", "", "url")}
-      ${field("Counter date", "cCounterAt", "", "date")}
-    </div>
-    <div class="actions"><button class="primary" id="addClaim" type="button">Add claim</button></div>
-    ${stepNav()}`;
-}
-
-function viewSilence() {
-  const rows = state.silence.map((s, i) =>
-    `<div class="row"><span class="tag">${esc(s.status)}</span> ${esc(s.label || "clock")} · ${esc(s.clock_start)} → ${esc(s.due || "—")}
-      <div class="note">${esc(s.note || "")} · ${esc(s.clock_basis || "")}</div>
-      <button type="button" class="pill" data-dels="${i}">Remove</button></div>`
-  ).join("") || "<p class='note'>No silence clocks yet. Skip if this pack is a claim-vs-counter only.</p>";
-  return `<h2>Silence clock</h2>
-    <p class="help">When the harm is delay: start, due, and status. Say whether the due date is your ask, a published SLA, or a named statute — do not invent statute days.</p>
-    <div class="list">${rows}</div>
-    <div class="fields">
-      ${field("Label", "sLabel", "Process clock")}
-      ${field("Clock start", "sStart", "", "date")}
-      ${field("Due", "sDue", "", "date")}
-      <label>Status<select id="sStatus">
-        <option value="open">Open</option>
-        <option value="under_review">Under review</option>
-        <option value="redirect_loop">Redirect loop</option>
-        <option value="refused">Refused</option>
-        <option value="answered">Answered</option>
-        <option value="withdrawn">Withdrawn</option>
-      </select></label>
-      ${field("Clock basis (your ask / SLA / named statute)", "sBasis", "", "area")}
-      ${field("Note", "sNote", "", "area")}
-    </div>
-    <div class="actions"><button class="primary" id="addSilence" type="button">Add clock</button></div>
-    ${stepNav()}`;
-}
-
-function viewCost() {
-  return `<h2>People's cost</h2>
-    <p class="help">The ledger leads with what people lost while the microphone stayed with the institution.</p>
-    <div class="fields">
-      ${field("Summary of harm", "harmSummary", state.harmSummary, "area")}
-      ${field("Time", "costTime", state.costTime)}
-      ${field("Money, if any", "costMoney", state.costMoney)}
-      ${field("What stopped", "costStopped", state.costStopped, "area")}
-    </div>
-    ${stepNav()}`;
-}
-
-function viewAuth() {
-  const opts = AUTH_STATUSES.map(([id, label]) =>
-    `<option value="${id}" ${state.authStatus === id ? "selected" : ""}>${esc(label)}</option>`
-  ).join("");
-  return `<h2>Authenticate</h2>
-    <p class="help">Status is structural against the sources you pasted — not a court finding. Use <em>rehash · never transpired</em> when the press line has no primary event on the public record. Use <em>contradicted by source</em> when a later official page collapses the claim.</p>
-    <div class="auth-box">
-      <strong>Spotlight rule</strong>
-      <p class="note" style="margin:6px 0 0">One sentence: what they said vs what the sources show (or fail to show). That sentence is what the gallery puts under the lights.</p>
-    </div>
-    <div class="fields">
-      <label>Authentication status<select id="authStatus">${opts}</select></label>
-      ${field("Spotlight (one line)", "spotlight", state.spotlight, "area")}
-      ${field("Explain ask — the question for the subject", "explainAsk", state.explainAsk, "area")}
-    </div>
-    <p class="note">AI is invited to assist: suggest candidate counter-URLs and rehash matches. Publish still requires your primary URLs above — the model is not the source.</p>
-    ${stepNav()}`;
-}
-
-function buildTexts() {
-  const place = PLACES[state.country] || PLACES.AU;
-  const who = state.anonymous || !state.yourName ? "Anonymous" : state.yourName;
-  const today = new Date().toISOString().slice(0, 10);
-  const claims = state.claims.map((c) =>
-    `${c.at || "undated"} — ${c.text}\nSource: ${c.url}${c.counter_url ? `\nCounter: ${c.counter_url} (${c.counter_at || ""})` : ""}`
-  ).join("\n\n") || "(no claims yet)";
-  const clocks = state.silence.map((s) =>
-    `${s.label || "clock"}: ${s.clock_start} → ${s.due || "—"} · ${s.status}\nBasis: ${s.clock_basis || "—"}\n${s.note || ""}`
-  ).join("\n\n") || "(no silence clock)";
-  const cost = [state.harmSummary, state.costTime && `Time: ${state.costTime}`, state.costMoney && `Money: ${state.costMoney}`, state.costStopped && `Stopped: ${state.costStopped}`].filter(Boolean).join("\n") || "(not filled)";
-  const authLine = `Status: ${state.authStatus}\nSpotlight: ${state.spotlight || "—"}\nExplain ask: ${state.explainAsk || "—"}`;
-  const foot = `General information, not legal advice. Public Voice does not lodge. Primary sources only. No private home/phone. No classified material. Authentication status is not a finding of corruption.`;
-  const anonNote = who === "Anonymous"
-    ? "I am writing anonymously via Public Voice. The pack is sealed to a browser key, not to a public name."
-    : "";
-  const draft = `PUBLIC VOICE PACK — DRAFT · NOT LODGED\nFree platform for people · Anonymous sound-out allowed\nPrepared: ${today} (device clock)\nHolder: ${who}\nCountry: ${place.name}\nDoor: ${state.door || "[door]"}\nTitle: ${state.title || "[title]"}\nSubject: ${state.role || "[role]"} · ${state.org || "[org]"}\nPublic office: ${state.publicOffice || "[public URL]"}\n\n=== AUTHENTICATION ===\n${authLine}\n\n=== CLAIMS (primary sources) ===\n${claims}\n\n=== SILENCE CLOCKS ===\n${clocks}\n\n=== PEOPLE'S COST ===\n${cost}\n\n=== LIMITS ===\n${foot}`;
-  const subject = `${who}\n${today}\n\n${state.org || "[office]"}\n${state.publicOffice ? "Public contact: " + state.publicOffice + "\n" : ""}\nSubject: Request for on-record explanation — ${state.title || "public statement"}\n\n${anonNote}\n\nI am writing about the following public statement(s):\n\n${claims}\n\nAuthentication (structural, against sources — not a legal finding):\n${authLine}\n\nPeople's cost:\n${cost}\n\nPlease reply on the public record to the explain ask above within 14 days of receiving this. That 14 days is the reply I am asking for; it is not stated here as a statutory period.\n\n${foot}`;
-  const foi = `${who}\n${today}\n\nFOI / official-information request (Draft · not lodged)\nAgency: ${state.org || "[agency]"}\n\n${anonNote}\n\nNote: some FOI portals require a name and contact when you lodge. That is your choice on their form — Public Voice does not lodge for you.\n\nI request recorded information about the process and decision trail relating to:\n${state.title || "[matter]"}\n\nRelevant public statements and sources:\n${claims}\n\nSilence / clock notes:\n${clocks}\n\nI seek non-exempt administrative records only. I am not requesting classified material.\n\n${place.clock}\n\n${foot}`;
-  const ombudsman = `${who}\n${today}\n\nComplaint summary (Draft · not lodged)\nAgency/office: ${state.org || "[org]"}\nI first contacted them on: ${state.sentOn || "[date]"}\n\n${anonNote}\n\n${authLine}\n\n${claims}\n\n${clocks}\n\nCost:\n${cost}\n\nOutcome sought: an on-record explanation or decision that matches the public sources, or a correction of the public line.\n\n${foot}`;
-  return { place, draft, subject, foi, ombudsman };
-}
-
-function pasteBox(id, text) {
-  return `<div class="paste-mini" id="${id}">${esc(text)}</div>
-    <div class="actions"><button type="button" class="pill" data-copy="${id}">Copy this block</button></div>`;
-}
-
-function viewSend() {
-  const texts = buildTexts();
-  const opts = Object.entries(PLACES).map(([id, p]) =>
-    `<option value="${id}" ${id === state.country ? "selected" : ""}>${esc(p.name)}</option>`
-  ).join("");
-  const cards = (texts.place.channels || []).map((ch) => {
-    const open = ch.open
-      ? `<a class="primary" style="display:inline-block;text-decoration:none;margin:6px 6px 6px 0" href="${ch.open}" target="_blank" rel="noopener noreferrer">Open the official page</a>`
-      : `<span class="note">Use the office’s published contact page.</span>`;
-    const pack = pasteBox("pack-" + ch.id, texts[ch.paste] || texts.subject);
-    return `<article class="channel"><h3>${esc(ch.title)}</h3><p class="when">${esc(ch.when)}</p>
-      <div class="actions">${open}</div>${pack}</article>`;
-  }).join("");
-  return `<h2>Send pack</h2>
-    <p class="draft-banner">Draft · not lodged — you copy; you send; this page lodges nothing</p>
-    <p class="help">Put the subject in the spotlight first. FOI and Ombudsman packs are cut-paste for official forms.</p>
-    <div class="fields">
-      <label>Country<select id="country">${opts}</select></label>
-      <label class="span2" style="flex-direction:row;align-items:center;gap:10px">
-        <input id="anonymous" type="checkbox" ${state.anonymous !== false ? "checked" : ""} style="width:auto">
-        Sound out anonymously (recommended)
-      </label>
-      ${state.anonymous !== false ? "" : field("Name on the packs (optional)", "yourName", state.yourName === "Anonymous" ? "" : state.yourName)}
-      ${field("Date you sent / will send the spotlight ask", "sentOn", state.sentOn, "date")}
-    </div>
-    <p class="note">Anonymous on the ledger and in the spotlight ask. If an official form later asks for your details when you paste, that is your choice — this page never lodges.</p>
-    <h3>Master draft</h3>
-    ${pasteBox("pack-draft", texts.draft)}
-    ${cards}
-    <p class="note">${esc(texts.place.clock)}</p>
-    ${stepNav()}`;
-}
-
-async function viewSeal() {
-  let status = "Nothing sealed yet.";
-  let cls = "note";
-  if (state.log.length) {
-    const check = await verifyLog(state.log);
-    const dirty = await changedSinceSeal();
-    if (!check.ok) { status = "Record no longer matches its seal (" + check.reason + ")."; cls = "bad"; }
-    else if (dirty) { status = "You changed the page after the seal. Seal again to cover current bytes."; cls = "bad"; }
-    else { status = "Seal holds. Head " + check.head.slice(0, 16) + "…"; cls = "ok"; }
+async function updateSealUI() {
+  const el = document.getElementById("sealStatus");
+  const head = document.getElementById("sealHead");
+  if (!state.log.length) {
+    el.className = "status";
+    el.textContent = "Not sealed yet.";
+    head.textContent = "";
+    return;
   }
-  const head = state.log.length ? state.log[state.log.length - 1].entry_hash : "";
-  return `<h2>Seal</h2>
-    <p class="help">Browser-held Ed25519 seal over the snapshot. Device clock only. Not a TSA. Anonymous seals still bind a key to the bytes — not a public name.</p>
-    <div class="fields">
-      <label class="span2" style="flex-direction:row;align-items:center;gap:10px">
-        <input id="anonymous" type="checkbox" ${state.anonymous !== false ? "checked" : ""} style="width:auto">
-        Seal as Anonymous
-      </label>
-      ${state.anonymous !== false ? "" : field("Name on the seal", "yourName", state.yourName === "Anonymous" ? "" : state.yourName)}
-    </div>
-    <p class="${cls}">${esc(status)}</p>
-    ${head ? `<p><code>${esc(head)}</code></p>` : ""}
-    <div class="actions">
-      <button class="primary" id="doSeal" type="button">Seal this pack</button>
-    </div>
-    ${stepNav()}`;
+  const check = await verifyLog(state.log);
+  const snapHash = await sha256hex(canonical(snapshot()));
+  const last = state.log[state.log.length - 1];
+  const dirty = last.snapshot_hash !== snapHash;
+  if (!check.ok) {
+    el.className = "status bad";
+    el.textContent = "Seal broken (" + check.reason + ").";
+  } else if (dirty) {
+    el.className = "status bad";
+    el.textContent = "Report changed after seal — seal again.";
+  } else {
+    el.className = "status ok";
+    el.textContent = "Seal holds.";
+  }
+  head.textContent = check.head || "";
 }
 
-async function viewExport() {
-  const checks = autoChecks();
-  const ready = checks.every((c) => c.ok);
-  const list = checks.map((c) =>
-    `<div class="check ${c.ok ? "ok" : "bad"}">${c.ok ? "✓" : "✗"} ${esc(c.id)} — ${esc(c.detail)}</div>`
-  ).join("");
-  const pack = await buildPack(checks, ready);
-  return `<h2>Export / publish checklist</h2>
-    <p class="draft-banner">Person controls publish · static MVP: download JSON · host later via Pages/PR</p>
-    <p class="help">Auto-reject if a source URL is missing, private contact appears, or auth row is incomplete. Human edge appeals are offline — Cursor contacts no one.</p>
-    ${list}
-    <p class="${ready ? "ok" : "bad"}">${ready ? "Checklist passed. You can download the sealed pack." : "Checklist failed. Fix the rows above before publishing."}</p>
-    <div class="actions">
-      <button class="primary" id="dlPack" type="button">Download pack JSON</button>
-      <button class="pill" id="copyPack" type="button">Copy pack JSON</button>
-    </div>
-    <p class="note">Gallery reads <code>packs/*.json</code> via <code>packs/index.json</code>. Phase B: Forms → Actions → PR. This desk does not upload.</p>
-    <pre class="paste-mini" id="packPreview">${esc(JSON.stringify(pack, null, 2))}</pre>
-    ${stepNav()}`;
+async function ensureKey() {
+  if (state.key && state.key.pkcs8 && state.key.pub) return state.key;
+  const pair = await crypto.subtle.generateKey({ name: "Ed25519" }, true, ["sign", "verify"]);
+  const pkcs8 = await crypto.subtle.exportKey("pkcs8", pair.privateKey);
+  const raw = await crypto.subtle.exportKey("raw", pair.publicKey);
+  state.key = { pkcs8: hex(pkcs8), pub: hex(raw) };
+  save();
+  return state.key;
 }
 
-async function buildPack(checks, ready) {
+async function doSeal() {
+  if (!state.report) { alert("Run authentication first."); return; }
+  if (!window.isSecureContext || !crypto.subtle) {
+    alert("Open via https:// or http://127.0.0.1 so the browser can sign.");
+    return;
+  }
+  const key = await ensureKey();
+  const privateKey = await crypto.subtle.importKey("pkcs8", fromHex(key.pkcs8), { name: "Ed25519" }, true, ["sign"]);
+  const at = new Date().toISOString();
+  const snap = snapshot();
+  const snapHash = await sha256hex(canonical(snap));
+  const prev = state.log.length ? state.log[state.log.length - 1].entry_hash : GENESIS;
+  const name = state.anonymous !== false ? "Anonymous" : "Holder";
+  const reason = "Sealed Public Voice AI quick report against primary sources.";
+  const digest = await sha256hex(canonical({ name, prev_hash: prev, reason, role: "holder", snapshot_hash: snapHash }));
+  const material = canonical({ digest, name, reason, role: "holder" });
+  const sig = await crypto.subtle.sign({ name: "Ed25519" }, privateKey, new TextEncoder().encode(material));
+  const body = {
+    approval_sig: hex(sig),
+    approver_pub: key.pub,
+    at,
+    anonymous: state.anonymous !== false,
+    clock_source: "device",
+    kind: "holder_seal",
+    name,
+    prev_hash: prev,
+    reason,
+    role: "holder",
+    seq: state.log.length + 1,
+    snapshot: snap,
+    snapshot_hash: snapHash,
+    statement_digest: digest
+  };
+  body.entry_hash = await sha256hex(prev + canonical(body));
+  state.log.push(body);
+  save();
+  await updateSealUI();
+}
+
+async function buildPack() {
+  const seal = state.log.length ? state.log[state.log.length - 1] : null;
   const body = {
     schema: "public-voice-pack/v1",
     product: "MUZZ Public Voice",
-    id: (state.title || "pack").toLowerCase().replace(/[^a-z0-9._-]+/g, "-").replace(/^-|-$/g, "").slice(0, 80) || "pack",
+    id: ("quick-" + (state.title || "challenge")).toLowerCase().replace(/[^a-z0-9._-]+/g, "-").slice(0, 80),
     demo: false,
-    title: state.title || "Untitled pack",
+    title: state.title || "Quick challenge",
     country: state.country,
-    door: state.door || "other",
-    subjects: [{ role: state.role || "", org: state.org || "", public_office: state.publicOffice || null }],
-    claims: state.claims.map((c) => ({
-      text: c.text, url: c.url, at: c.at, kind: c.kind || "public_statement",
-      counter_url: c.counter_url || null, counter_at: c.counter_at || null, screenshot_hash: null
-    })),
-    silence: state.silence,
+    door: "official_disinfo",
+    subjects: [{ role: "Public publisher", org: state.org || "", public_office: state.url }],
+    claims: [{
+      text: state.quote || state.title || "See URL",
+      url: state.url,
+      at: new Date().toISOString().slice(0, 10),
+      kind: "public_statement",
+      counter_url: state.counter || null,
+      counter_at: state.counter ? new Date().toISOString().slice(0, 10) : null,
+      screenshot_hash: null
+    }],
+    silence: [],
     auth: {
       status: state.authStatus,
       spotlight: state.spotlight,
-      method: "holder_structured",
+      method: "ai_assisted_primary",
       explain_ask: state.explainAsk
     },
-    harm: {
-      summary: state.harmSummary || "(not filled)",
-      time: state.costTime || "",
-      money: state.costMoney || "",
-      stopped: state.costStopped || ""
-    },
+    harm: { summary: "See formal report — people’s interest in a checkable public record.", time: "", money: "", stopped: "" },
     send_status: "draft_not_lodged",
     limits: [
-      "Free platform for people. Anonymous sound-out allowed.",
-      "Primary sources only. AI assists; AI is not a publishable source.",
-      "Authentication status is structural against sources, not a legal finding.",
-      "No doxx. No classified material. Draft · not lodged unless the holder already sent.",
-      "Seal uses this device's clock only. Operators unnamed on the public face."
+      "Quick path. Seal kept. Primary sources only.",
+      "Public Voice AI assists; not a publishable source of not-true by itself.",
+      "Draft · not lodged. No doxx. No classified."
     ]
   };
   const content_hash = await sha256hex(canonical(body));
-  const seal = lastSeal();
-  const anon = state.anonymous !== false;
-  const sealName = anon ? "Anonymous" : (state.yourName || "Anonymous");
   return Object.assign({}, body, {
     content_hash,
     seal: seal ? {
@@ -727,154 +610,47 @@ async function buildPack(checks, ready) {
       reason: seal.reason
     } : {
       kind: "unsigned_export",
-      name: sealName,
-      anonymous: anon,
+      name: state.anonymous !== false ? "Anonymous" : "Holder",
+      anonymous: state.anonymous !== false,
       at: new Date().toISOString(),
       clock_source: "device",
       approver_pub: null,
       approval_sig: null,
       snapshot_hash: null,
       entry_hash: null,
-      reason: "Unsigned export"
+      reason: "Unsigned quick export"
     },
-    moderation: { auto_checks: checks || autoChecks(), publish_ready: !!ready }
+    moderation: { publish_ready: !!seal, auto_checks: [{ id: "sealed", ok: !!seal, detail: seal ? "sealed" : "seal first" }] },
+    formal_report: state.report
   });
 }
 
-function bind() {
-  const goNext = document.getElementById("goNext");
-  const goPrev = document.getElementById("goPrev");
-  if (goNext) goNext.onclick = () => goStep(1);
-  if (goPrev) goPrev.onclick = () => goStep(-1);
-  document.querySelectorAll("[data-door]").forEach((btn) => {
-    btn.onclick = () => { state.door = btn.dataset.door; save(); render(); };
-  });
-  document.querySelectorAll("input, textarea, select").forEach((el) => {
-    el.onchange = () => {
-      read();
-      save();
-      if (el.id === "anonymous" || state.step === "send" || state.step === "export" || state.step === "auth" || state.step === "seal") render();
-    };
-  });
-  const addClaim = document.getElementById("addClaim");
-  if (addClaim) addClaim.onclick = () => {
-    const text = document.getElementById("cText").value.trim();
-    const url = document.getElementById("cUrl").value.trim();
-    if (text.length < 8 || url.length < 8) { alert("Need claim text and a primary-source URL."); return; }
-    if (!/^https?:\/\//i.test(url)) { alert("Primary source must be an http(s) URL."); return; }
-    state.claims.push({
-      at: document.getElementById("cAt").value,
-      kind: document.getElementById("cKind").value,
-      text, url,
-      counter_url: document.getElementById("cCounter").value.trim() || null,
-      counter_at: document.getElementById("cCounterAt").value || null
-    });
-    save(); render();
-  };
-  document.querySelectorAll("[data-delc]").forEach((btn) => {
-    btn.onclick = () => { state.claims.splice(Number(btn.dataset.delc), 1); save(); render(); };
-  });
-  const addSilence = document.getElementById("addSilence");
-  if (addSilence) addSilence.onclick = () => {
-    const start = document.getElementById("sStart").value;
-    if (!start) { alert("Clock start required."); return; }
-    state.silence.push({
-      label: document.getElementById("sLabel").value.trim(),
-      clock_start: start,
-      due: document.getElementById("sDue").value || null,
-      status: document.getElementById("sStatus").value,
-      note: document.getElementById("sNote").value.trim(),
-      clock_basis: document.getElementById("sBasis").value.trim()
-    });
-    save(); render();
-  };
-  document.querySelectorAll("[data-dels]").forEach((btn) => {
-    btn.onclick = () => { state.silence.splice(Number(btn.dataset.dels), 1); save(); render(); };
-  });
-  document.querySelectorAll("[data-copy]").forEach((btn) => {
-    btn.onclick = async () => {
-      await navigator.clipboard.writeText(document.getElementById(btn.dataset.copy).innerText);
-      btn.textContent = "Copied";
-    };
-  });
-  const seal = document.getElementById("doSeal");
-  if (seal) seal.onclick = doSeal;
-  const dl = document.getElementById("dlPack");
-  if (dl) dl.onclick = async () => {
-    read();
-    const checks = autoChecks();
-    const pack = await buildPack(checks, checks.every((c) => c.ok));
-    const blob = new Blob([JSON.stringify(pack, null, 2)], { type: "application/json" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = (pack.id || "public-voice-pack") + ".json";
-    a.click();
-    URL.revokeObjectURL(a.href);
-  };
-  const cp = document.getElementById("copyPack");
-  if (cp) cp.onclick = async () => {
-    read();
-    const checks = autoChecks();
-    const pack = await buildPack(checks, checks.every((c) => c.ok));
-    await navigator.clipboard.writeText(JSON.stringify(pack, null, 2));
-    cp.textContent = "Copied";
-  };
-}
+document.getElementById("run").onclick = runAI;
+document.getElementById("doSeal").onclick = doSeal;
+document.getElementById("copyReport").onclick = async () => {
+  await navigator.clipboard.writeText(state.report || "");
+  document.getElementById("copyReport").textContent = "Copied";
+};
+document.getElementById("mailto").onclick = () => {
+  const sub = encodeURIComponent("Public Voice report — request for on-record explanation");
+  const body = encodeURIComponent(state.report || "");
+  location.href = "mailto:?subject=" + sub + "&body=" + body;
+};
+document.getElementById("dlPack").onclick = async () => {
+  const pack = await buildPack();
+  const blob = new Blob([JSON.stringify(pack, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = (pack.id || "public-voice-quick") + ".json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+};
 
-async function ensureKey() {
-  if (state.key && state.key.pkcs8 && state.key.pub) return state.key;
-  const pair = await crypto.subtle.generateKey({ name: "Ed25519" }, true, ["sign", "verify"]);
-  const pkcs8 = await crypto.subtle.exportKey("pkcs8", pair.privateKey);
-  const raw = await crypto.subtle.exportKey("raw", pair.publicKey);
-  state.key = { pkcs8: hex(pkcs8), pub: hex(raw) };
-  save();
-  return state.key;
+fillForm();
+if (state.report) {
+  showResults({ status: state.authStatus, spotlight: state.spotlight, explainAsk: state.explainAsk });
 }
-
-async function doSeal() {
-  read();
-  if (state.anonymous !== false) state.yourName = "Anonymous";
-  if (!state.yourName || state.yourName.length < 2) { alert("Seal as Anonymous, or enter a name."); return; }
-  if (!window.isSecureContext || !crypto.subtle) {
-    alert("Open from http://127.0.0.1 so the browser can sign.");
-    return;
-  }
-  const key = await ensureKey();
-  const privateKey = await crypto.subtle.importKey("pkcs8", fromHex(key.pkcs8), { name: "Ed25519" }, true, ["sign"]);
-  const at = new Date().toISOString();
-  const snap = snapshot();
-  const snapHash = await sha256hex(canonical(snap));
-  const prev = state.log.length ? state.log[state.log.length - 1].entry_hash : GENESIS;
-  const reason = "Sourced anonymous-capable account of a public statement, authenticated against primary sources.";
-  const digest = await sha256hex(canonical({ name: state.yourName, prev_hash: prev, reason, role: "holder", snapshot_hash: snapHash }));
-  const material = canonical({ digest, name: state.yourName, reason, role: "holder" });
-  const sig = await crypto.subtle.sign({ name: "Ed25519" }, privateKey, new TextEncoder().encode(material));
-  const body = {
-    approval_sig: hex(sig),
-    approver_pub: key.pub,
-    at,
-    anonymous: state.anonymous !== false,
-    clock_source: "device",
-    kind: "holder_seal",
-    name: state.yourName,
-    prev_hash: prev,
-    reason,
-    role: "holder",
-    seq: state.log.length + 1,
-    snapshot: snap,
-    snapshot_hash: snapHash,
-    statement_digest: digest
-  };
-  body.entry_hash = await sha256hex(prev + canonical(body));
-  state.log.push(body);
-  save();
-  render();
-}
-
-render();
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js").catch(() => {});
-}
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(() => {});
 </script>
 </body>
 </html>

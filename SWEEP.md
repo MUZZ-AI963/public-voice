@@ -30,6 +30,15 @@ cd docs/public-voice   # or the Pages repo root
 python3 sweep/lawful_sweep.py
 ```
 
+## Quick path AI
+
+Browser Quick path (`index.html`): URL → fetch/analyse → formal report → seal.  
+CLI loop (optional deepen):
+
+```bash
+python3 ai_loop/quick_auth.py --url 'https://…' --quote '…' --counter 'https://…'
+```
+
 ## “No gates” vs fences
 
 No Craig gate for eng · keep shipping.  
