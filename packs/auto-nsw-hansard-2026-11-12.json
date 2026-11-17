@@ -15,7 +15,7 @@
   ],
   "claims": [
     {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 2026-11-12 \u00b7 Topics on the public TOC: Address; Standard Time Amendment (Reduction of Daylight Saving) Bill 2026 (No 2); Environmental Planning and Assessment  Amendment (Sydney Drinking Water Catchment Neutral or Beneficial Effect) Bill 2026; Energy and Other Legislation Amendment (Renewable Energy Infrastructure) Bill 2026 (No. 2); Visitors; Community Preschools; State Economy; Community Preschools; State Economy; Parkes Energy Recovery Facility; Western Sy",
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 2026-11-12 \u00b7 Topics on the public TOC: Address-In-Reply; Standard Time Amendment (Reduction of Daylight Saving) Bill 2026 (No 2); Environmental Planning and Assessment  Amendment (Sydney Drinking Water Catchment Neutral or Beneficial Effect) Bill 2026; Energy and Other Legislation Amendment (Renewable Energy Infrastructure) Bill 2026 (No. 2); Visitors; Community Preschools; State Economy; Community Preschools; State Economy; Parkes Energy Recovery Facility; W",
       "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12",
       "at": "2026-11-12",
       "kind": "hansard",
@@ -57,7 +57,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-17T04:18:13Z",
+    "at": "2026-11-17T18:52:28Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -65,7 +65,7 @@
     "entry_hash": null,
     "reason": "Lawful auto-harvest of public parliamentary record"
   },
-  "content_hash": "2fff10359bdb10461d860d93b73f26b3d7c5b03ec2d06f2473501237fa5e7141",
+  "content_hash": "e2b4b0552f4a128d7e420b75923ee01d0cefc8c44e3c11edbe88077449bbfb33",
   "moderation": {
     "auto_checks": [
       {

@@ -22,6 +22,15 @@
       "counter_url": null,
       "counter_at": "2026-11-17",
       "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Council \u00b7 2026-11-17 \u00b7 Topics on the public TOC: Parliamentary Departments; NSW Electoral Commission; Office of the Children's Guardian; Former Senior Trade and Investment Commissioner Mike Newman; UNSW Investor Showcase; Day of German Unity; ACON Honour Awards; Australian Museum Am200 Program; Mission ShakthiSAT; Taiwanese National Day Reception; Fshd Global Research Foundation; Korean War Veterans Day; Ernie Lewis 100th Birthday; Tribute to Charles Brendan Kavanagh; T",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-17",
+      "at": "2026-11-17",
+      "kind": "hansard",
+      "counter_url": null,
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
     }
   ],
   "silence": [],
@@ -48,7 +57,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-17T04:18:13Z",
+    "at": "2026-11-17T18:52:28Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -56,7 +65,7 @@
     "entry_hash": null,
     "reason": "Lawful auto-harvest of public parliamentary record"
   },
-  "content_hash": "f4f95f947311d58cb651b5fa98c447f3f0ba315e51749fa9999be97b5ad7ad26",
+  "content_hash": "7a7925628b187d9baa231b15d922eff41e02095f89399ffe639b2f25df85b91f",
   "moderation": {
     "auto_checks": [
       {
