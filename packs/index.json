@@ -1,6 +1,6 @@
 {
   "product": "MUZZ Public Voice",
-  "generated": "2026-11-16",
+  "generated": "2026-11-17",
   "notice": "Static ledger index. Auto packs from lawful public-source sweep. DEMO packs are fictional. This index does not lodge anything.",
   "packs": [
     {
@@ -18,6 +18,16 @@
       "file": "auto-europarl-2026-11-16.json",
       "demo": false,
       "title": "European Parliament public activity \u00b7 2026-11-16",
+      "country": "EU",
+      "door": "elected",
+      "auth_status": "matches_source",
+      "silence_days": null
+    },
+    {
+      "id": "auto-europarl-2026-11-17",
+      "file": "auto-europarl-2026-11-17.json",
+      "demo": false,
+      "title": "European Parliament public activity \u00b7 2026-11-17",
       "country": "EU",
       "door": "elected",
       "auth_status": "matches_source",
@@ -54,6 +64,16 @@
       "silence_days": null
     },
     {
+      "id": "auto-feed-health-20261117-0418",
+      "file": "auto-feed-health-20261117-0418.json",
+      "demo": false,
+      "title": "Lawful feed health \u00b7 2026-11-17",
+      "country": "OTHER",
+      "door": "other",
+      "auth_status": "awaiting_sources",
+      "silence_days": null
+    },
+    {
       "id": "auto-nsw-hansard-2026-11-10",
       "file": "auto-nsw-hansard-2026-11-10.json",
       "demo": false,
@@ -84,6 +104,16 @@
       "silence_days": null
     },
     {
+      "id": "auto-nsw-hansard-2026-11-17",
+      "file": "auto-nsw-hansard-2026-11-17.json",
+      "demo": false,
+      "title": "NSW Hansard on the public record \u00b7 2026-11-17",
+      "country": "AU",
+      "door": "elected",
+      "auth_status": "matches_source",
+      "silence_days": null
+    },
+    {
       "id": "demo-claim-rehash",
       "file": "demo-claim-rehash.json",
       "demo": true,
@@ -101,7 +131,7 @@
       "country": "AU",
       "door": "foi_pid",
       "auth_status": "silence_past_clock",
-      "silence_days": 76
+      "silence_days": 77
     }
   ]
 }

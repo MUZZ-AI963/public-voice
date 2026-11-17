@@ -1,0 +1,166 @@
+{
+  "schema": "public-voice-pack/v1",
+  "product": "MUZZ Public Voice",
+  "id": "auto-europarl-2026-11-17",
+  "demo": false,
+  "title": "European Parliament public activity \u00b7 2026-11-17",
+  "country": "EU",
+  "door": "elected",
+  "subjects": [
+    {
+      "role": "European Parliament (public record)",
+      "org": "European Parliament",
+      "public_office": "https://data.europarl.europa.eu/en/developer-corner/opendata-api"
+    }
+  ],
+  "claims": [
+    {
+      "text": "European Parliament \u00b7 Quality jobs in a competitive future-oriented social market economy (topical debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32020000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Quality jobs in a competitive future-oriented social market economy (topical debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32070000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Improving the socio-economic situation of farmers and rural areas, ensuring fair incomes, food security as well as a just transition (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32400000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Improving the socio-economic situation of farmers and rural areas, ensuring fair incomes, food security as well as a just transition (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32450000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Improving the socio-economic situation of farmers and rural areas, ensuring fair incomes, food security as well as a just transition (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32560000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Improving the socio-economic situation of farmers and rural areas, ensuring fair incomes, food security as well as a just transition (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32680000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Improving the socio-economic situation of farmers and rural areas, ensuring fair incomes, food security as well as a just transition (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32700000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Improving the socio-economic situation of farmers and rural areas, ensuring fair incomes, food security as well as a just transition (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32850000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Improving the socio-economic situation of farmers and rural areas, ensuring fair incomes, food security as well as a just transition (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32860000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Improving the socio-economic situation of farmers and rural areas, ensuring fair incomes, food security as well as a just transition (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2024-01-17-OTH-32880000",
+      "at": "2024-01-17",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-17",
+      "screenshot_hash": null
+    }
+  ],
+  "silence": [],
+  "auth": {
+    "status": "matches_source",
+    "spotlight": "Official EP Open Data speeches feed harvested 2026-11-17 \u2014 primary activity labels for people to check against press lines.",
+    "method": "ai_assisted_primary",
+    "explain_ask": "Where a public line touches these EP topics, point to the matching primary record \u2014 or correct the line."
+  },
+  "harm": {
+    "summary": "Without a machine-speed public index, official lines can drift from the record while people wait.",
+    "time": "",
+    "money": "",
+    "stopped": ""
+  },
+  "send_status": "not_applicable",
+  "limits": [
+    "Lawful sweep of public European Parliament Open Data API.",
+    "Not legal advice. Not a guilt finding. Anonymous operators.",
+    "Fallback when NSW Hansard Cloudflare host-errors.",
+    "We do not lodge. No doxx. No classified material."
+  ],
+  "seal": {
+    "kind": "unsigned_export",
+    "name": "Anonymous",
+    "anonymous": true,
+    "at": "2026-11-17T04:18:13Z",
+    "clock_source": "device",
+    "approver_pub": null,
+    "approval_sig": null,
+    "snapshot_hash": null,
+    "entry_hash": null,
+    "reason": "Lawful auto-harvest of public parliamentary record"
+  },
+  "content_hash": "c9d2adeb622811dc4da196646567a2365e461cc9ee646831c4918e28d6319ff9",
+  "moderation": {
+    "auto_checks": [
+      {
+        "id": "has_source_url",
+        "ok": true,
+        "detail": "primary http(s) URL"
+      },
+      {
+        "id": "no_private_contact",
+        "ok": true,
+        "detail": "ok"
+      },
+      {
+        "id": "not_classified_drop",
+        "ok": true,
+        "detail": "public Hansard/API only"
+      },
+      {
+        "id": "no_auto_lodge",
+        "ok": true,
+        "detail": "sweep never lodges"
+      }
+    ],
+    "publish_ready": true
+  }
+}
