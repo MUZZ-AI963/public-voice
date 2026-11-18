@@ -15,7 +15,7 @@
   ],
   "claims": [
     {
-      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 2026-11-18 \u00b7 Topics on the public TOC: Electoral Legislation Amendment (Miscellaneous) Bill 2026; Industrial Relations and Other Legislation Amendment (Miscellaneous)  Bill 2026; Suspension of Standing and Sessional Orders: Deferred Divisions; Mount Pleasant Mine Bill 2026; Visitors; Veterinary Services Bill 2026; Reserve Sitting Day; Minister for Police and Counter-terrorism Comments; Representation of Ministers Absent During Questions; E-bike Laws",
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 2026-11-18 \u00b7 Topics on the public TOC: Electoral Legislation Amendment (Miscellaneous) Bill 2026; Industrial Relations and Other Legislation Amendment (Miscellaneous)  Bill 2026; Suspension of Standing and Sessional Orders: Deferred Divisions; Mount Pleasant Mine Bill 2026; Visitors; Veterinary Services Bill 2026; Reserve Sitting Day; Minister for Police and Counter-terrorism Comments; Representation of Ministers Absent During Questions; E-bike Laws; Public H",
       "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-18",
       "at": "2026-11-18",
       "kind": "hansard",
@@ -57,7 +57,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-18T03:18:08Z",
+    "at": "2026-11-18T18:30:37Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -65,7 +65,7 @@
     "entry_hash": null,
     "reason": "Lawful auto-harvest of public parliamentary record"
   },
-  "content_hash": "116da9a7a579b04756c96590da5fe782f60e2f3f110dcd56ee0e124cf23cb611",
+  "content_hash": "6325367fec1cf0cd3843b5be62f524bdbdbbfb6042efe73c8415b151182d3ae2",
   "moderation": {
     "auto_checks": [
       {

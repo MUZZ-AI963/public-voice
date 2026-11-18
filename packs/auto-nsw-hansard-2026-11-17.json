@@ -57,7 +57,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-18T03:18:08Z",
+    "at": "2026-11-18T18:30:37Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -65,7 +65,7 @@
     "entry_hash": null,
     "reason": "Lawful auto-harvest of public parliamentary record"
   },
-  "content_hash": "792dbdbdbc36a0edd8d2431d84c83b57f8d933846f88972ab652b6f7dccbfa28",
+  "content_hash": "180097be7ec9fdd3b0ac2bbccc678da70b6c85f70d9904a922bec1e248a4cc38",
   "moderation": {
     "auto_checks": [
       {
