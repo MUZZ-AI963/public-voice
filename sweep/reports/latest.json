@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-17T18:52:28Z",
+  "at": "2026-11-18T03:18:08Z",
   "lawful": true,
   "lodged": false,
   "contacted": false,
@@ -101,6 +101,13 @@
   ],
   "hansard_days": [
     {
+      "date": "2026-11-18",
+      "ok": true,
+      "items": 2,
+      "error": null,
+      "source": "nsw-hansard"
+    },
+    {
       "date": "2026-11-17",
       "ok": true,
       "items": 2,
@@ -136,14 +143,7 @@
       "source": null
     },
     {
-      "date": "2026-11-12",
-      "ok": true,
-      "items": 2,
-      "error": null,
-      "source": "nsw-hansard"
-    },
-    {
-      "date": "2026-11-17",
+      "date": "2026-11-18",
       "ok": true,
       "items": 12,
       "error": null,
@@ -151,12 +151,12 @@
     }
   ],
   "published": [
-    "auto-feed-health-20261117-1852",
+    "auto-feed-health-20261118-0318",
+    "auto-nsw-hansard-2026-11-18",
     "auto-nsw-hansard-2026-11-17",
-    "auto-nsw-hansard-2026-11-12",
-    "auto-europarl-2026-11-17"
+    "auto-europarl-2026-11-18"
   ],
-  "index_count": 14,
+  "index_count": 17,
   "right_places": [
     "packs/*.json on GitHub Pages ledger",
     "packs/index.json gallery index",

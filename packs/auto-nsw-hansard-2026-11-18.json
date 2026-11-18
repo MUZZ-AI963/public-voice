@@ -1,0 +1,94 @@
+{
+  "schema": "public-voice-pack/v1",
+  "product": "MUZZ Public Voice",
+  "id": "auto-nsw-hansard-2026-11-18",
+  "demo": false,
+  "title": "NSW Hansard on the public record \u00b7 2026-11-18",
+  "country": "AU",
+  "door": "elected",
+  "subjects": [
+    {
+      "role": "NSW Parliament (public record)",
+      "org": "Parliament of New South Wales",
+      "public_office": "https://www.parliament.nsw.gov.au/"
+    }
+  ],
+  "claims": [
+    {
+      "text": "NSW Hansard \u00b7 Legislative Assembly \u00b7 2026-11-18 \u00b7 Topics on the public TOC: Electoral Legislation Amendment (Miscellaneous) Bill 2026; Industrial Relations and Other Legislation Amendment (Miscellaneous)  Bill 2026; Suspension of Standing and Sessional Orders: Deferred Divisions; Mount Pleasant Mine Bill 2026; Visitors; Veterinary Services Bill 2026; Reserve Sitting Day; Minister for Police and Counter-terrorism Comments; Representation of Ministers Absent During Questions; E-bike Laws",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-18",
+      "at": "2026-11-18",
+      "kind": "hansard",
+      "counter_url": null,
+      "counter_at": "2026-11-18",
+      "screenshot_hash": null
+    },
+    {
+      "text": "NSW Hansard \u00b7 Legislative Council \u00b7 2026-11-18 \u00b7 Topics on the public TOC: Lunchtime Concert Series; Conduct of Business; Privileges Committee; Irish-Anglo Treaty; Castle Hill Rebellion; Jack Ferguson Memorial Lecture; Queanbeyan Diwali Mela Lantern Festival; Peace Week Parliamentary Briefing; World Prematurity Day; NSW Australian of the Year Awards 2027; Sydney Peace Prize; Business NSW State Business Awards; National Workspace Week; Invisible Disabilities Week; National Assistance Animal Accre",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-18",
+      "at": "2026-11-18",
+      "kind": "hansard",
+      "counter_url": null,
+      "counter_at": "2026-11-18",
+      "screenshot_hash": null
+    }
+  ],
+  "silence": [],
+  "auth": {
+    "status": "matches_source",
+    "spotlight": "Official NSW Hansard TOC for 2026-11-18 is on the public API \u2014 topics below are primary-source fragments for the people to check against press lines.",
+    "method": "ai_assisted_primary",
+    "explain_ask": "Where a public line touches these NSW Hansard topics, point to the matching primary record \u2014 or correct the line."
+  },
+  "harm": {
+    "summary": "Without a machine-speed public index, official lines can drift from the record while people wait.",
+    "time": "",
+    "money": "",
+    "stopped": ""
+  },
+  "send_status": "not_applicable",
+  "limits": [
+    "Lawful sweep of public NSW Hansard API only.",
+    "Not legal advice. Not a guilt finding. Anonymous operators.",
+    "AI/assist structured this pack; primary URLs are the source.",
+    "We do not lodge. No doxx. No classified material."
+  ],
+  "seal": {
+    "kind": "unsigned_export",
+    "name": "Anonymous",
+    "anonymous": true,
+    "at": "2026-11-18T03:18:08Z",
+    "clock_source": "device",
+    "approver_pub": null,
+    "approval_sig": null,
+    "snapshot_hash": null,
+    "entry_hash": null,
+    "reason": "Lawful auto-harvest of public parliamentary record"
+  },
+  "content_hash": "116da9a7a579b04756c96590da5fe782f60e2f3f110dcd56ee0e124cf23cb611",
+  "moderation": {
+    "auto_checks": [
+      {
+        "id": "has_source_url",
+        "ok": true,
+        "detail": "primary http(s) URL"
+      },
+      {
+        "id": "no_private_contact",
+        "ok": true,
+        "detail": "ok"
+      },
+      {
+        "id": "not_classified_drop",
+        "ok": true,
+        "detail": "public Hansard/API only"
+      },
+      {
+        "id": "no_auto_lodge",
+        "ok": true,
+        "detail": "sweep never lodges"
+      }
+    ],
+    "publish_ready": true
+  }
+}
