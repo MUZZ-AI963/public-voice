@@ -19,7 +19,7 @@
       "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-18",
       "at": "2026-11-18",
       "kind": "hansard",
-      "counter_url": null,
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1323879322-172372",
       "counter_at": "2026-11-18",
       "screenshot_hash": null
     },
@@ -28,7 +28,7 @@
       "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-18",
       "at": "2026-11-18",
       "kind": "hansard",
-      "counter_url": null,
+      "counter_url": "https://api.parliament.nsw.gov.au/api/hansard/search/daily/pdf/HANSARD-1820781676-106735",
       "counter_at": "2026-11-18",
       "screenshot_hash": null
     }
@@ -57,7 +57,7 @@
     "kind": "unsigned_export",
     "name": "Anonymous",
     "anonymous": true,
-    "at": "2026-11-18T18:30:37Z",
+    "at": "2026-11-19T02:55:04Z",
     "clock_source": "device",
     "approver_pub": null,
     "approval_sig": null,
@@ -65,7 +65,7 @@
     "entry_hash": null,
     "reason": "Lawful auto-harvest of public parliamentary record"
   },
-  "content_hash": "6325367fec1cf0cd3843b5be62f524bdbdbbfb6042efe73c8415b151182d3ae2",
+  "content_hash": "845f7199538beebdd8bcd726e6659289d6e6d333419602097ae3c1bc7d5227fd",
   "moderation": {
     "auto_checks": [
       {
