@@ -164,6 +164,16 @@
       "silence_days": null
     },
     {
+      "id": "auto-feed-health-20261120-1809",
+      "file": "auto-feed-health-20261120-1809.json",
+      "demo": false,
+      "title": "Lawful feed health \u00b7 2026-11-20",
+      "country": "OTHER",
+      "door": "other",
+      "auth_status": "awaiting_sources",
+      "silence_days": null
+    },
+    {
       "id": "auto-nsw-hansard-2026-11-10",
       "file": "auto-nsw-hansard-2026-11-10.json",
       "demo": false,
