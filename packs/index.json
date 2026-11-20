@@ -1,6 +1,6 @@
 {
   "product": "MUZZ Public Voice",
-  "generated": "2026-11-19",
+  "generated": "2026-11-20",
   "notice": "Static ledger index. Auto packs from lawful public-source sweep. DEMO packs are fictional. This index does not lodge anything.",
   "packs": [
     {
@@ -48,6 +48,16 @@
       "file": "auto-europarl-2026-11-19.json",
       "demo": false,
       "title": "European Parliament public activity \u00b7 2026-11-19",
+      "country": "EU",
+      "door": "elected",
+      "auth_status": "matches_source",
+      "silence_days": null
+    },
+    {
+      "id": "auto-europarl-2026-11-20",
+      "file": "auto-europarl-2026-11-20.json",
+      "demo": false,
+      "title": "European Parliament public activity \u00b7 2026-11-20",
       "country": "EU",
       "door": "elected",
       "auth_status": "matches_source",
@@ -144,6 +154,16 @@
       "silence_days": null
     },
     {
+      "id": "auto-feed-health-20261120-0248",
+      "file": "auto-feed-health-20261120-0248.json",
+      "demo": false,
+      "title": "Lawful feed health \u00b7 2026-11-20",
+      "country": "OTHER",
+      "door": "other",
+      "auth_status": "awaiting_sources",
+      "silence_days": null
+    },
+    {
       "id": "auto-nsw-hansard-2026-11-10",
       "file": "auto-nsw-hansard-2026-11-10.json",
       "demo": false,
@@ -221,7 +241,7 @@
       "country": "AU",
       "door": "foi_pid",
       "auth_status": "silence_past_clock",
-      "silence_days": 79
+      "silence_days": 80
     }
   ]
 }

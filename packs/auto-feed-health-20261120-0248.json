@@ -1,0 +1,164 @@
+{
+  "schema": "public-voice-pack/v1",
+  "product": "MUZZ Public Voice",
+  "id": "auto-feed-health-20261120-0248",
+  "demo": false,
+  "title": "Lawful feed health \u00b7 2026-11-20",
+  "country": "OTHER",
+  "door": "other",
+  "subjects": [
+    {
+      "role": "Public open-data feeds",
+      "org": "Allowlisted registry",
+      "public_office": "https://muzz-ai963.github.io/public-voice/sources-registry.json"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Feed nsw-hansard (NSW Parliament Hansard API): up",
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    },
+    {
+      "text": "Feed uk-parliament-api (UK Parliament API): up",
+      "url": "https://api.parliament.uk/",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    },
+    {
+      "text": "Feed uk-historic-hansard (Historic Hansard JSON): up",
+      "url": "https://api.parliament.uk/historic-hansard/api",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    },
+    {
+      "text": "Feed twfy (TheyWorkForYou API): up",
+      "url": "https://www.theyworkforyou.com/api/docs/",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    },
+    {
+      "text": "Feed europarl-opendata (European Parliament Open Data API v2): up",
+      "url": "https://data.europarl.europa.eu/api/v2",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    },
+    {
+      "text": "Feed everypolitician (EveryPolitician Popolo): up",
+      "url": "https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    },
+    {
+      "text": "Feed au-oaic-foi (OAIC FOI rights): down",
+      "url": "https://www.oaic.gov.au/",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    },
+    {
+      "text": "Feed au-ombudsman (Commonwealth Ombudsman complaints): down",
+      "url": "https://www.ombudsman.gov.au/",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    },
+    {
+      "text": "Feed us-foia (FOIA.gov): up",
+      "url": "https://www.foia.gov/",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    },
+    {
+      "text": "Feed claimreview (Schema.org ClaimReview): up",
+      "url": "https://schema.org/ClaimReview",
+      "at": "2026-11-20",
+      "kind": "other",
+      "counter_url": null,
+      "counter_at": null,
+      "screenshot_hash": null
+    }
+  ],
+  "silence": [],
+  "auth": {
+    "status": "awaiting_sources",
+    "spotlight": "One or more allowlisted public feeds failed a sweep check \u2014 see claims.",
+    "method": "ai_assisted_primary",
+    "explain_ask": "Operators of down feeds: restore public API access for the people\u2019s record."
+  },
+  "harm": {
+    "summary": "When public feeds die, people lose machine-speed access to the record.",
+    "time": "",
+    "money": "",
+    "stopped": ""
+  },
+  "send_status": "not_applicable",
+  "limits": [
+    "Health check of published URLs only.",
+    "Not legal advice. Sweep does not lodge or contact anyone."
+  ],
+  "seal": {
+    "kind": "unsigned_export",
+    "name": "Anonymous",
+    "anonymous": true,
+    "at": "2026-11-20T02:48:57Z",
+    "clock_source": "device",
+    "approver_pub": null,
+    "approval_sig": null,
+    "snapshot_hash": null,
+    "entry_hash": null,
+    "reason": "Lawful feed health sweep"
+  },
+  "content_hash": "6da6a48ff079a83d83c1667ec0fca3e8b21c9bd520419c8648d071996d460184",
+  "moderation": {
+    "auto_checks": [
+      {
+        "id": "has_source_url",
+        "ok": true,
+        "detail": "primary http(s) URL"
+      },
+      {
+        "id": "no_private_contact",
+        "ok": true,
+        "detail": "ok"
+      },
+      {
+        "id": "not_classified_drop",
+        "ok": true,
+        "detail": "public Hansard/API only"
+      },
+      {
+        "id": "no_auto_lodge",
+        "ok": true,
+        "detail": "sweep never lodges"
+      }
+    ],
+    "publish_ready": true
+  }
+}
