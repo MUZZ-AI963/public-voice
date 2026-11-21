@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-21T02:57:45Z",
+  "at": "2026-11-21T17:00:40Z",
   "lawful": true,
   "lodged": false,
   "contacted": false,
@@ -151,13 +151,13 @@
     }
   ],
   "published": [
-    "auto-feed-health-20261121-0257",
+    "auto-feed-health-20261121-1700",
     "auto-nsw-hansard-2026-11-19",
     "auto-nsw-hansard-2026-11-18",
     "auto-nsw-hansard-2026-11-17",
     "auto-europarl-2026-11-21"
   ],
-  "index_count": 27,
+  "index_count": 28,
   "right_places": [
     "packs/*.json on GitHub Pages ledger",
     "packs/index.json gallery index",
