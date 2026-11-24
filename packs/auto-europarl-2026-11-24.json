@@ -1,0 +1,166 @@
+{
+  "schema": "public-voice-pack/v1",
+  "product": "MUZZ Public Voice",
+  "id": "auto-europarl-2026-11-24",
+  "demo": false,
+  "title": "European Parliament public activity \u00b7 2026-11-24",
+  "country": "EU",
+  "door": "elected",
+  "subjects": [
+    {
+      "role": "European Parliament (public record)",
+      "org": "European Parliament",
+      "public_office": "https://data.europarl.europa.eu/en/developer-corner/opendata-api"
+    }
+  ],
+  "claims": [
+    {
+      "text": "European Parliament \u00b7 Trans-European energy infrastructure (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-20720000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Trans-European energy infrastructure (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-21010000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Guidelines for the 2023 budget \u2013 Section III (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-21310000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Guidelines for the 2023 budget \u2013 Section III (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-21320000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Guidelines for the 2023 budget \u2013 Section III (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-21440000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Guidelines for the 2023 budget \u2013 Section III (debate)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-21490000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Voting time",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-21630000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Investigational medicinal products made available in the UK with respect to Northern Ireland, Cyprus, Ireland and Malta (C9-0476/2021 - Pascal Canfin) (Rule 163) (vote)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-21690000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Strengthening the application of the principle of equal pay for equal work or work of equal value between men and women (A9-0056/2022 - Samira Rafaela, Kira Marie Peter-Hansen) (vote)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-21800000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    },
+    {
+      "text": "European Parliament \u00b7 Strengthening the application of the principle of equal pay for equal work or work of equal value between men and women (A9-0056/2022 - Samira Rafaela, Kira Marie Peter-Hansen) (vote)",
+      "url": "https://data.europarl.europa.eu/en/search?query=MTG-PL-2022-04-05-OTH-21830000",
+      "at": "2022-04-05",
+      "kind": "hansard",
+      "counter_url": "https://data.europarl.europa.eu/api/v2/speeches?format=application%2Fld%2Bjson&offset=0&limit=1",
+      "counter_at": "2026-11-24",
+      "screenshot_hash": null
+    }
+  ],
+  "silence": [],
+  "auth": {
+    "status": "matches_source",
+    "spotlight": "Official EP Open Data speeches feed harvested 2026-11-24 \u2014 primary activity labels for people to check against press lines.",
+    "method": "ai_assisted_primary",
+    "explain_ask": "Where a public line touches these EP topics, point to the matching primary record \u2014 or correct the line."
+  },
+  "harm": {
+    "summary": "Without a machine-speed public index, official lines can drift from the record while people wait.",
+    "time": "",
+    "money": "",
+    "stopped": ""
+  },
+  "send_status": "not_applicable",
+  "limits": [
+    "Lawful sweep of public European Parliament Open Data API.",
+    "Not legal advice. Not a guilt finding. Anonymous operators.",
+    "Fallback when NSW Hansard Cloudflare host-errors.",
+    "We do not lodge. No doxx. No classified material."
+  ],
+  "seal": {
+    "kind": "unsigned_export",
+    "name": "Anonymous",
+    "anonymous": true,
+    "at": "2026-11-24T05:43:28Z",
+    "clock_source": "device",
+    "approver_pub": null,
+    "approval_sig": null,
+    "snapshot_hash": null,
+    "entry_hash": null,
+    "reason": "Lawful auto-harvest of public parliamentary record"
+  },
+  "content_hash": "6c76e88ab9bf0aa851a8d2f720e7f5a49b505c4557378c43646b7df5b9d692f8",
+  "moderation": {
+    "auto_checks": [
+      {
+        "id": "has_source_url",
+        "ok": true,
+        "detail": "primary http(s) URL"
+      },
+      {
+        "id": "no_private_contact",
+        "ok": true,
+        "detail": "ok"
+      },
+      {
+        "id": "not_classified_drop",
+        "ok": true,
+        "detail": "public Hansard/API only"
+      },
+      {
+        "id": "no_auto_lodge",
+        "ok": true,
+        "detail": "sweep never lodges"
+      }
+    ],
+    "publish_ready": true
+  }
+}
