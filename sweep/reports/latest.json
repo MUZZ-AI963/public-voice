@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-25T04:45:25Z",
+  "at": "2026-11-25T19:40:25Z",
   "lawful": true,
   "lodged": false,
   "contacted": false,
@@ -151,10 +151,10 @@
     }
   ],
   "published": [
-    "auto-feed-health-20261125-0445",
+    "auto-feed-health-20261125-1940",
     "auto-europarl-2026-11-25"
   ],
-  "index_count": 39,
+  "index_count": 40,
   "right_places": [
     "packs/*.json on GitHub Pages ledger",
     "packs/index.json gallery index",
