@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-26T19:21:34Z",
+  "at": "2026-11-27T03:54:59Z",
   "lawful": true,
   "lodged": false,
   "contacted": false,
@@ -101,6 +101,13 @@
   ],
   "hansard_days": [
     {
+      "date": "2026-11-27",
+      "ok": true,
+      "items": 0,
+      "error": null,
+      "source": null
+    },
+    {
       "date": "2026-11-26",
       "ok": true,
       "items": 0,
@@ -136,14 +143,7 @@
       "source": null
     },
     {
-      "date": "2026-11-21",
-      "ok": true,
-      "items": 0,
-      "error": null,
-      "source": null
-    },
-    {
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "ok": true,
       "items": 12,
       "error": null,
@@ -151,8 +151,8 @@
     }
   ],
   "published": [
-    "auto-feed-health-20261126-1921",
-    "auto-europarl-2026-11-26"
+    "auto-feed-health-20261127-0354",
+    "auto-europarl-2026-11-27"
   ],
   "index_count": 42,
   "right_places": [

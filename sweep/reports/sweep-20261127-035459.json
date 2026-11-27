@@ -1,0 +1,170 @@
+{
+  "at": "2026-11-27T03:54:59Z",
+  "lawful": true,
+  "lodged": false,
+  "contacted": false,
+  "nsw_items": 0,
+  "fallback_europarl": true,
+  "health": [
+    {
+      "url": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12",
+      "ok": true,
+      "status": 200,
+      "id": "nsw-hansard",
+      "kind": "hansard",
+      "name": "NSW Parliament Hansard API",
+      "probed": "https://api.parliament.nsw.gov.au/api/hansard/search/bydate?date=2026-11-12"
+    },
+    {
+      "url": "https://api.parliament.uk/",
+      "ok": true,
+      "status": 200,
+      "id": "uk-parliament-api",
+      "kind": "parliament",
+      "name": "UK Parliament API",
+      "probed": "https://api.parliament.uk/"
+    },
+    {
+      "url": "https://api.parliament.uk/historic-hansard/api",
+      "ok": true,
+      "status": 200,
+      "id": "uk-historic-hansard",
+      "kind": "hansard",
+      "name": "Historic Hansard JSON",
+      "probed": "https://api.parliament.uk/historic-hansard/api"
+    },
+    {
+      "url": "https://www.theyworkforyou.com/api/docs/",
+      "ok": true,
+      "status": 200,
+      "id": "twfy",
+      "kind": "civic_hansard",
+      "name": "TheyWorkForYou API",
+      "probed": "https://www.theyworkforyou.com/api/docs/"
+    },
+    {
+      "url": "https://data.europarl.europa.eu/api/v2",
+      "ok": true,
+      "status": 200,
+      "id": "europarl-opendata",
+      "kind": "parliament",
+      "name": "European Parliament Open Data API v2",
+      "probed": "https://data.europarl.europa.eu/api/v2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json",
+      "ok": true,
+      "status": 200,
+      "id": "everypolitician",
+      "kind": "identity",
+      "name": "EveryPolitician Popolo",
+      "probed": "https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json"
+    },
+    {
+      "url": "https://www.oaic.gov.au/",
+      "ok": false,
+      "status": null,
+      "error": "HTTP Error 403: Forbidden",
+      "id": "au-oaic-foi",
+      "kind": "pathway",
+      "name": "OAIC FOI rights",
+      "probed": "https://www.oaic.gov.au/"
+    },
+    {
+      "url": "https://www.ombudsman.gov.au/",
+      "ok": false,
+      "status": null,
+      "error": "HTTP Error 403: Forbidden",
+      "id": "au-ombudsman",
+      "kind": "pathway",
+      "name": "Commonwealth Ombudsman complaints",
+      "probed": "https://www.ombudsman.gov.au/"
+    },
+    {
+      "url": "https://www.foia.gov/",
+      "ok": true,
+      "status": 200,
+      "id": "us-foia",
+      "kind": "pathway",
+      "name": "FOIA.gov",
+      "probed": "https://www.foia.gov/"
+    },
+    {
+      "url": "https://schema.org/ClaimReview",
+      "ok": true,
+      "status": 200,
+      "id": "claimreview",
+      "kind": "interop",
+      "name": "Schema.org ClaimReview",
+      "probed": "https://schema.org/ClaimReview"
+    }
+  ],
+  "hansard_days": [
+    {
+      "date": "2026-11-27",
+      "ok": true,
+      "items": 0,
+      "error": null,
+      "source": null
+    },
+    {
+      "date": "2026-11-26",
+      "ok": true,
+      "items": 0,
+      "error": null,
+      "source": null
+    },
+    {
+      "date": "2026-11-25",
+      "ok": true,
+      "items": 0,
+      "error": null,
+      "source": null
+    },
+    {
+      "date": "2026-11-24",
+      "ok": true,
+      "items": 0,
+      "error": null,
+      "source": null
+    },
+    {
+      "date": "2026-11-23",
+      "ok": true,
+      "items": 0,
+      "error": null,
+      "source": null
+    },
+    {
+      "date": "2026-11-22",
+      "ok": true,
+      "items": 0,
+      "error": null,
+      "source": null
+    },
+    {
+      "date": "2026-11-27",
+      "ok": true,
+      "items": 12,
+      "error": null,
+      "source": "europarl"
+    }
+  ],
+  "published": [
+    "auto-feed-health-20261127-0354",
+    "auto-europarl-2026-11-27"
+  ],
+  "index_count": 42,
+  "right_places": [
+    "packs/*.json on GitHub Pages ledger",
+    "packs/index.json gallery index",
+    "sweep/reports/* audit (not a tip-line)"
+  ],
+  "fences": [
+    "primary sources only",
+    "no doxx",
+    "no classified",
+    "no auto-lodge",
+    "Cursor contacts no one"
+  ]
+}
